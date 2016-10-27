@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Reflectionship</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <!-- Include any needed CSS files below. -->
+    <link href="/css/Home.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <img src="{{HomeButton}}" />
+        </div>
+        <div id="background">
+            {{#each AspectRows}}
+            <div class="row">
+                {{#each AspectColumns}}
+                <div class="col-xs-6">
+                    <div>
+                        <img src="{{ImageHolder}}" />
+                    </div>
+                    <div>
+                        <img src="{{TextBox}}" />
+                        <p>{{AspectTextTop}}</p>
+                        <p>{{AspectTextBot}}</p>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <!-- jQuery and Javascript script files below. -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>
