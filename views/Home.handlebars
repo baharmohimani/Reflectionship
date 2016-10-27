@@ -12,27 +12,45 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="jumbotron">
-            <img src="{{HomeButton}}" />
+    <!-- Testing code for later.
+    <div class="jumbotron container-fluid" id="top-window">
+        <img class="img-responsive home-button center-block" src="{{HomeButton}}" />
+    </div>
+    -->
+    <nav class="navbar navbar-custom navbar-fixed-top">
+        <div class="container">
+            <img class="img-responsive home-button center-block" src="{{HomeButton}}" />
         </div>
-        <div id="background">
-            {{#each AspectRows}}
+    </nav>
+
+    <div id="app-background">
+        <div class="container">
             <div class="row">
-                {{#each AspectColumns}}
+                {{#each AspectTopColumns}}
                 <div class="col-xs-6">
-                    <div>
-                        <img src="{{ImageHolder}}" />
+                    <div class="image-overlay">
+                        <img class="img-responsive img-circle aspect-top-image center-block" src="{{Image}}" />
+                        <img class="img-responsive aspect-circle center-block" src="{{ImageHolder}}" />
                     </div>
                     <div>
-                        <img src="{{TextBox}}" />
-                        <p>{{AspectTextTop}}</p>
-                        <p>{{AspectTextBot}}</p>
+                        <img class="img-responsive aspect-text center-block" src="{{TextBox}}" />
                     </div>
                 </div>
                 {{/each}}
             </div>
-            {{/each}}
+            <div class="row">
+                {{#each AspectBotColumns}}
+                <div class="col-xs-6">
+                    <div class="image-overlay">
+                        <img class="img-responsive img-circle aspect-bot-image center-block" src="{{Image}}" />
+                        <img class="img-responsive aspect-circle center-block" src="{{ImageHolder}}" />
+                    </div>
+                    <div>
+                        <img class="img-responsive aspect-text center-block" src="{{TextBox}}" />
+                    </div>
+                </div>
+                {{/each}}
+            </div>
         </div>
     </div>
     <!-- jQuery and Javascript script files below. -->
