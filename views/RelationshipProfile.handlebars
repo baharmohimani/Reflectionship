@@ -9,14 +9,73 @@
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet" />
     <!-- Include any needed CSS files below. -->
     <link href="/css/RelationshipProfile.css" rel="stylesheet" />
-    <link href="/css/dashboard.css" rel="stylesheet" />
 </head>
 
 <body>
     <!-- Top bar displaying the profile's picture and name, and the return home button. -->
     <nav class="navbar navbar-custom navbar-fixed-top">
-
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand navbar-color" href="#">Relationship Profile</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse" color="black">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" class="navbar-color">Dashboard</a></li>
+                    <li><a href="#" class="navbar-color">Settings</a></li>
+                    <li><a href="#" class="navbar-color">Profile</a></li>
+                    <li><a href="#" class="navbar-color">Help</a></li>
+                </ul>
+                <img class="home-img navbar-right" src="{{HomeButton}}" />
+            </div>
+        </div>
     </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li class="active"><a href="#">Personal Info<span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Likes</a></li>
+                    <li><a href="#">Dislikes</a></li>
+                    <li><a href="#">Add +</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <h1 class="page-header">{{ProfileName}}</h1>
+                <h2 class="sub-header">Personal Info</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Date of Birth</td>
+                                <td>July 4th, 1776</td>
+                            </tr>
+                            <tr>
+                                <td>Age</td>
+                                <td>21</td>
+                            </tr>
+                            <tr>
+                                <td>Gender</td>
+                                <td>'MURICA</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- jQuery and Javascript script files below. -->
     <script src="https://code.jquery.com/jquery.js"></script>

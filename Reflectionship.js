@@ -11,7 +11,7 @@ var handlebars = require("express3-handlebars")
 var home = require("./routes/HomeRoutes");
 // var emotion = require("./routes/EmotionTrackerRoutes");
 // var conversation = require("./routes/ConversationIdeasRoutes");
-// var relaprofile = require("./routes/RelationshipProfileRoutes");
+var relaprofile = require("./routes/RelationshipProfileRoutes");
 // var switchusers = require("./routes/SwitchProfileRoutes");
 
 var app = express();
@@ -41,7 +41,7 @@ app.get("/", home.view);
 
 /* When switching to the profile name, we need to send in the name 
 of the person whose profile we want to look at. */
-// app.get("/RelationshipProfile/:ProfileName", relaprofile.view);
+app.get("/RelationshipProfile/:ProfileName", relaprofile.view);
 
 http.createServer(app).listen(app.get("port"), function(){
   console.log("Express server listening on port " + app.get("port"));

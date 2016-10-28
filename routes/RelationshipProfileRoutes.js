@@ -1,4 +1,4 @@
-/* Loads the relationship profile page. */
+ /* Loads the relationship profile page. */
 
 exports.view = function (req, res) {
     var ProfileInfo = {
