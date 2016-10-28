@@ -23,7 +23,7 @@ exports.view = function (req, res) {
                 "ImageHolder": "images/ImageHolder.png",
                 "TextBox": "images/RelationshipProfile.png",
                 "Image": "images/Relationship.png",
-                "Link": "/RelationshipProfile/"
+                "Link": "/RelationshipProfile/Obama"
             },
             {
                 "ImageHolder": "images/ImageHolder.png",
