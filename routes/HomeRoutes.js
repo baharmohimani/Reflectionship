@@ -8,13 +8,13 @@ exports.view = function (req, res) {
                 "ImageHolder": "images/ImageHolder.png",
                 "TextBox": "images/EmotionTracker.png",
                 "Image": "images/Emotion.png",
-                "Link": ""
+                "Link": "/EmotionTracker"
             },
             {
                 "ImageHolder": "images/ImageHolder.png",
                 "TextBox": "images/ConversationIdeas.png",
                 "Image": "images/Conversation.png",
-                "Link": ""
+                "Link": "/ConversationIdeas"
             }
         ],
         // Bottom row - contains relationship profile and switch profile aspects.
@@ -29,7 +29,7 @@ exports.view = function (req, res) {
                 "ImageHolder": "images/ImageHolder.png",
                 "TextBox": "images/SwitchProfile.png",
                 "Image": "images/Switch.png",
-                "Link": ""
+                "Link": "/SwitchProfile"
             }
         ],
         "HomeButton": "images/HomeSymbol.png"
