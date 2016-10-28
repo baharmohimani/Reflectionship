@@ -1,0 +1,62 @@
+#app-background {
+     content:"";
+     background: url("../images/BackgroundImage.png");
+     opacity: 0.80;
+     position: relative;
+     z-index: -1;	
+}
+
+#top-window {
+	position: relative;
+	background-color: #4fb8ea;
+	width: 100%;
+}
+
+.navbar-custom {
+	background-color: #4fb8ea;
+	border-radius: 0;
+	opacity: 0.90;
+}
+
+.aspect-top-image {
+	position: relative;
+	width: 40%;
+	height: 40%;
+	z-index: 1;
+	margin-top: 205px;
+}
+
+.aspect-bot-image {
+	position: relative;
+	width: 40%;
+	height: 40%;
+	z-index: 1;
+	margin-top: -20px;
+}
+
+.aspect-circle {
+	position: absolute;
+	width: 60%;
+	height: auto;
+	z-index: 2;
+	top: -23%;
+	left: 20%;
+}
+
+.aspect-text {
+	position: relative;
+	width: 75%;
+	height: auto;
+	margin-top: -10%;
+}
+
+.home-button {
+	position: relative;
+	width: 12%;
+	height: 12%;
+}
+
+.image-overlay {
+	width: 100%;
+	position: relative;
+}
