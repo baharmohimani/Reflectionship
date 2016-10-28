@@ -7,12 +7,14 @@ exports.view = function (req, res) {
             {
                 "ImageHolder": "images/ImageHolder.png",
                 "TextBox": "images/EmotionTracker.png",
-                "Image": "images/Emotion.png"
+                "Image": "images/Emotion.png",
+                "Link": ""
             },
             {
                 "ImageHolder": "images/ImageHolder.png",
                 "TextBox": "images/ConversationIdeas.png",
-                "Image": "images/Conversation.png"
+                "Image": "images/Conversation.png",
+                "Link": ""
             }
         ],
         // Bottom row - contains relationship profile and switch profile aspects.
@@ -20,12 +22,14 @@ exports.view = function (req, res) {
             {
                 "ImageHolder": "images/ImageHolder.png",
                 "TextBox": "images/RelationshipProfile.png",
-                "Image": "images/Relationship.png"
+                "Image": "images/Relationship.png",
+                "Link": "/RelationshipProfile/"
             },
             {
                 "ImageHolder": "images/ImageHolder.png",
                 "TextBox": "images/SwitchProfile.png",
-                "Image": "images/Switch.png"
+                "Image": "images/Switch.png",
+                "Link": ""
             }
         ],
         "HomeButton": "images/HomeSymbol.png"

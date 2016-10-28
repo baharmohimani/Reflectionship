@@ -12,8 +12,12 @@
 </head>
 
 <body>
+    <a href="reddit.com" z-index="99" top="50px">CLICK HERE</a>
+    <a href="reddit.com" z-index="99">CLICK HERE</a>
+    <a href="reddit.com" z-index="99">CLICK HERE</a>
+    <a href="reddit.com" z-index="99">CLICK HERE</a>
     <!-- The top quarter of the display containing the home button. -->
-    <nav class="navbar navbar-custom navbar-fixed-top">
+    <nav class="navbar navbar-custom navbar-fixed-top" z-index="10">
         <div class="container">
             <img class="img-responsive home-button center-block" src="{{HomeButton}}" />
         </div>
@@ -21,7 +25,7 @@
 
     <!-- Bottom portion of the screen containing the background and the
         aspect options. -->
-    <div id="app-background">
+    <div id="app-background" overflow="auto">
         <div class="container">
             <div class="row">
                 {{#each AspectTopColumns}}
@@ -40,7 +44,8 @@
                 {{#each AspectBotColumns}}
                 <div class="col-xs-6">
                     <div class="image-overlay">
-                        <img class="img-responsive img-circle aspect-bot-image center-block" src="{{Image}}" />
+                        <img class="img-responsive img-circle aspect-bot-image center-block " src="{{Image}}"
+                             data-href="{{Link}}" />
                         <img class="img-responsive aspect-circle center-block" src="{{ImageHolder}}" />
                     </div>
                     <div>
@@ -54,6 +59,7 @@
     <!-- jQuery and Javascript script files below. -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/ReflectionshipListeners.js"></script>
 </body>
 
 </html>
