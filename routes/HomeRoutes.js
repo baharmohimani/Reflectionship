@@ -32,5 +32,5 @@ exports.view = function (req, res) {
     };
 
     // Send this data to Home.handlebars.
-    res.render("Home", Aspects);
+    res.render("index", Aspects);
 };
