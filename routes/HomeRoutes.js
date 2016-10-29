@@ -32,7 +32,8 @@ exports.view = function (req, res) {
                 "Link": "/SwitchProfile"
             }
         ],
-        "HomeButton": "images/HomeSymbol.png"
+        "HomeButton": "images/HomeSymbol.png",
+        "Background": "images/BackgroundImage.png"
     };
 
     // Send this data to Home.handlebars.

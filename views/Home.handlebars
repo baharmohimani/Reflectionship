@@ -11,52 +11,55 @@
     <link href="/css/Home.css" rel="stylesheet" />
 </head>
 
-<body>
-    <!-- The top quarter of the display containing the home button. -->
-    <nav class="navbar navbar-custom navbar-fixed-top" z-index="10">
-        <div class="container">
-            <img class="img-responsive home-button center-block" src="{{HomeButton}}" />
-        </div>
-    </nav>
+<body class="background">
+    <div>
+        <!-- The top quarter of the display containing the home button. -->
+        <nav class="navbar navbar-custom navbar-fixed-top" z-index="10">
+            <div class="container">
+                <img class="img-responsive home-button center-block" src="{{HomeButton}}" />
+            </div>
+        </nav>
 
-    <!-- Bottom portion of the screen containing the background and the
+        <!-- Bottom portion of the screen containing the background and the
         aspect options. -->
-    <div class="container">
-        <div class="row">
-            {{#each AspectTopColumns}}
-            <div class="col-xs-6">
-                <div class="image-overlay">
-                    <a href="{{Link}}">
-                        <img class="img-responsive img-circle aspect-top-image center-block" src="{{Image}}" />
-                        <img class="img-responsive aspect-circle center-block" src="{{ImageHolder}}" />
-                    </a>
+        <div class="container">
+            <div class="row">
+                {{#each AspectTopColumns}}
+                <div class="col-xs-6">
+                    <div class="image-overlay">
+                        <a href="{{Link}}">
+                            <img class="img-responsive img-circle aspect-top-image center-block" src="{{Image}}" />
+                            <img class="img-responsive aspect-circle center-block" src="{{ImageHolder}}" />
+                        </a>
+                    </div>
+                    <div>
+                        <a href="{{Link}}">
+                            <img class="img-responsive aspect-text center-block" src="{{TextBox}}" />
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <a href="{{Link}}">
-                        <img class="img-responsive aspect-text center-block" src="{{TextBox}}" />
-                    </a>
-                </div>
+                {{/each}}
             </div>
-            {{/each}}
-        </div>
-        <div class="row">
-            {{#each AspectBotColumns}}
-            <div class="col-xs-6">
-                <div class="image-overlay">
-                    <a href="{{Link}}">
-                        <img class="img-responsive img-circle aspect-bot-image center-block " src="{{Image}}" />
-                        <img class="img-responsive aspect-circle center-block" src="{{ImageHolder}}" />
-                    </a>
+            <div class="row">
+                {{#each AspectBotColumns}}
+                <div class="col-xs-6">
+                    <div class="image-overlay">
+                        <a href="{{Link}}">
+                            <img class="img-responsive img-circle aspect-bot-image center-block " src="{{Image}}" />
+                            <img class="img-responsive aspect-circle center-block" src="{{ImageHolder}}" />
+                        </a>
+                    </div>
+                    <div>
+                        <a href="{{Link}}">
+                            <img class="img-responsive aspect-text center-block" src="{{TextBox}}" />
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <a href="{{Link}}">
-                        <img class="img-responsive aspect-text center-block" src="{{TextBox}}" />
-                    </a>
-                </div>
+                {{/each}}
             </div>
-            {{/each}}
         </div>
     </div>
+
     <!-- jQuery and Javascript script files below. -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
