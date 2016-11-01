@@ -12,32 +12,30 @@
 </head>
 
 <body class="background">
-    <div>
-        <!-- The top quarter of the display containing the home button. -->
-        <nav class="navbar navbar-fixed-top navbar-custom">
-            <div class="container">
-                <img class="img-responsive home-button center-block" src="{{HomeButton}}" />
-            </div>
-        </nav>
-
-        <!-- Bottom portion of the screen containing the background and the
-        aspect options. -->
+    <!-- The top quarter of the display containing the home button. -->
+    <nav class="navbar navbar-fixed-top navbar-custom">
         <div class="container">
-            {{#each AspectRows}}
-            <div class="row">
-                {{#each AspectColumns}}
-                <div class="col-xs-6">
-                    <div class="image-overlay">
-                        <a href="{{Link}}">
-                            <img class="img-responsive img-circle center-block image-switch {{ImageClass}}" src="{{Image}}" />
-                            <img class="img-responsive aspect-circle center-block {{HolderClass}}" src="{{ImageHolder}}" />
-                        </a>
-                    </div>
+            <img class="img-responsive home-button center-block" src="{{HomeButton}}" />
+        </div>
+    </nav>
+
+    <!-- Bottom portion of the screen containing the background and the
+    aspect options. -->
+    <div class="container">
+        {{#each AspectRows}}
+        <div class="row">
+            {{#each AspectColumns}}
+            <div class="col-xs-6">
+                <div class="image-overlay">
+                    <a href="{{Link}}">
+                        <img class="img-responsive img-circle center-block image-switch {{ImageClass}}" src="{{Image}}" />
+                        <img class="img-responsive aspect-circle center-block {{HolderClass}}" src="{{ImageHolder}}" />
+                    </a>
                 </div>
-                {{/each}}
             </div>
             {{/each}}
         </div>
+        {{/each}}
     </div>
 
     <!-- jQuery and Javascript script files below. -->
