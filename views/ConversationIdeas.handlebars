@@ -1,32 +1,46 @@
-<!doctype html>
-<html>
-    <head>
-    <link href="css/Reflectionship.css" rel="stylesheet" type= "text/css"/>
-	<meta charset="utf-8">
-	<title>Reflectionship</title>
-	</head>
-<body>
-  
+﻿<!DOCTYPE html>
 
-    <ul class="tab">
-    <a href= "conversation_Idea.html" ><img src = "../public/images/Conversation.png" id = "1" width="200" height=auto align="justify"></a>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Conversation Ideas</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <!-- Include any needed CSS files below. -->
+    <link href="/css/ConversationIdeas.css" rel="stylesheet" />
+</head>
 
-    <a href= "Emotion_Tracker.html" ><img src = "../public/images/Emotion.png" id="2" width="200" height=auto align="justify"> </a>
+<body class="background">
+    <!-- Top bar displaying the profile's picture and name, and the return home button. -->
+    <nav class="navbar navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand navbar-color" href="#">{{AspectName}}</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse" color="black">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" class="navbar-color">Dashboard</a></li>
+                    <li><a href="#" class="navbar-color">Settings</a></li>
+                    <li><a href="#" class="navbar-color">Profile</a></li>
+                    <li><a href="#" class="navbar-color">Help</a></li>
+                </ul>
+                <a href="{{HomeLink}}">
+                    <img class="home-button navbar-right" src="{{HomeButton}}" />
+                </a>
+            </div>
+        </div>
+    </nav>
 
-    <a href= "Relationship_profile.html"><img src = "../public/images/Relationship.png" id="3" width="200" height=auto align="left"> </a>
-
-    <a href= "Reflectionship.html"><img src = "../public/images/BackgroundImage.png" id="3" width="200" height=auto align="left"> </a>
-
-    <a href= "switch_profile.html" ><img src = "../public/images/Switch.png" id="4" width="200" height=auto align="right"> </a>
-</ul>
-	
-    <article class="tablinks">
-    <section id="">
-<div id="conversation_Idea" class="tabcontent">
-  <img src = "../public/images/Conversation.png" width="220" height=auto align="left" hspace="50">
-</div>
-</section>
-</article>
-
+    <!-- jQuery and Javascript script files below. -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/ConversationIdeasListener.js"></script>
 </body>
 </html>

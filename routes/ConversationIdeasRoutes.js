@@ -1,3 +1,9 @@
 exports.view = function (req, res) {
-    res.render("conversation_Idea");
+    var ConversationInfo = {
+        "AspectName": "Conversation Ideas",
+        "HomeButton": "../images/HomeSymbol.png",
+        "HomeLink": "/"
+    };
+
+    res.render("ConversationIdeas", ConversationInfo);
 };

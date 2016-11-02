@@ -11,7 +11,7 @@ exports.view = function (req, res) {
                         "ImageHolder": "images/ImageHolder.png",
                         "Image": "images/Emotion.png",
                         "ImageText": "images/EmotionTrackerText.png",
-                        "Link": "/EmotionTracker",
+                        "AspectLink": "/EmotionTracker",
                         "ImageClass": "top-image",
                         "HolderClass": "top-holder"
                     },
@@ -19,7 +19,7 @@ exports.view = function (req, res) {
                         "ImageHolder": "images/ImageHolder.png",
                         "Image": "images/Conversation.png",
                         "ImageText": "images/ConversationIdeasText.png",
-                        "Link": "/ConversationIdeas",
+                        "AspectLink": "/ConversationIdeas",
                         "ImageClass": "top-image",
                         "HolderClass": "top-holder"
                     }
@@ -32,7 +32,7 @@ exports.view = function (req, res) {
                         "ImageHolder": "images/ImageHolder.png",
                         "Image": "images/Relationship.png",
                         "ImageText": "images/RelationshipProfileText.png",
-                        "Link": "/RelationshipProfile/Obama",
+                        "AspectLink": "/RelationshipProfile/Obama",
                         "ImageClass": "bottom-image",
                         "HolderClass": "bottom-holder"
                     },
@@ -40,7 +40,7 @@ exports.view = function (req, res) {
                         "ImageHolder": "images/ImageHolder.png",
                         "Image": "images/Switch.png",
                         "ImageText": "images/SwitchProfileText.png",
-                        "Link": "/SwitchProfile",
+                        "AspectLink": "/SwitchProfile",
                         "ImageClass": "bottom-image",
                         "HolderClass": "bottom-holder"
                     }

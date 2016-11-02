@@ -11,7 +11,7 @@
     <link href="/css/RelationshipProfile.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="background">
     <!-- Top bar displaying the profile's picture and name, and the return home button. -->
     <nav class="navbar navbar-custom navbar-fixed-top">
         <div class="container-fluid">
@@ -22,7 +22,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand navbar-color" href="#">Relationship Profile</a>
+                <a class="navbar-brand navbar-color" href="#">{{AspectName}}</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse" color="black">
                 <ul class="nav navbar-nav navbar-right">
@@ -31,8 +31,8 @@
                     <li><a href="#" class="navbar-color">Profile</a></li>
                     <li><a href="#" class="navbar-color">Help</a></li>
                 </ul>
-                <a href="/">
-                    <img class="home-img navbar-right" src="{{HomeButton}}" />
+                <a href="{{HomeLink}}">
+                    <img class="home-button navbar-right" src="{{HomeButton}}" />
                 </a>
             </div>
         </div>
@@ -82,7 +82,7 @@
     <!-- jQuery and Javascript script files below. -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/ReflectionshipListeners.js"></script>
+    <script src="/js/RelationshipProfileListener.js"></script>
 </body>
 
 </html>
