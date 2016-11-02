@@ -3,14 +3,17 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function () {
     initializePage();
+
+    // Disable all image texts initially.
+    $(".img-text").hide();
 })
 
 /*
  * Function that is called when the document is ready.
  */
 function initializePage() {
-    $(".image-switch").mouseenter(imageToText);
-    $(".image-switch").mouseleave(textToImage);
+    $(".aspect-circle").mouseenter(imageToText);
+    $(".aspect-circle").mouseleave(textToImage);
 }
 
 /*
@@ -20,7 +23,17 @@ function initializePage() {
  */
 function imageToText(event) {
     console.log("Mouse has entered this element!");
-    $(this).src("");
+
+    // Grab the hyperlink parent of the image.
+    var aParent = $(event.target).closest("a");
+    
+    // Grab the image and the text elements.
+    var imageChild = $(aParent).find(".img-circle");
+    var textChild = $(aParent).find(".img-text");
+
+    // Make the image disappear, make the text appear.
+    imageChild.hide();
+    textChild.fadeIn();
 }
 
 /*
@@ -30,4 +43,15 @@ function imageToText(event) {
  */
 function textToImage(event) {
     console.log("Mouse has left this element!");
+
+    // Grab the hyperlink parent of the image.
+    var aParent = $(event.target).closest("a");
+
+    // Grab the image and the text elements.
+    var imageChild = $(aParent).find(".img-circle");
+    var textChild = $(aParent).find(".img-text");
+
+    // Make the text disappear, make the image appear.
+    textChild.hide();
+    imageChild.fadeIn();
 }
