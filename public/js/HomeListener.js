@@ -5,6 +5,9 @@ $(document).ready(function () {
     initializePage();
 
     // Disable all image texts initially.
+    $(".img-text").animate({
+        opacity: 0
+    }, 0);
     $(".img-text").hide();
 })
 
@@ -28,12 +31,22 @@ function imageToText(event) {
     var aParent = $(event.target).closest("a");
     
     // Grab the image and the text elements.
-    var imageChild = $(aParent).find(".img-circle");
-    var textChild = $(aParent).find(".img-text");
+    var imageChild = aParent.find(".img-circle");
+    var textChild = aParent.find(".img-text");
 
     // Make the image disappear, make the text appear.
     imageChild.hide();
-    textChild.fadeIn();
+    textChild.show();
+
+    // In the background, make the hidden image child have no opacity so it can fade in.
+    imageChild.animate({
+        opacity: 0
+    }, 0);
+
+    // Animate the text bubble to make the text slowly fade in.
+    textChild.animate({
+        opacity: 1
+    }, 500);
 }
 
 /*
@@ -53,5 +66,15 @@ function textToImage(event) {
 
     // Make the text disappear, make the image appear.
     textChild.hide();
-    imageChild.fadeIn();
+    imageChild.show();
+
+    // In the background, make the hidden text child have no opacity so that it can fade in.
+    textChild.animate({
+        opacity: 0
+    }, 0);
+
+    // Animate the image to make the image slowly fade in.
+    imageChild.animate({
+        opacity: 1
+    }, 500);
 }
