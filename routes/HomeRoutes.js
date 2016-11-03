@@ -2,22 +2,10 @@
 
 exports.view = function (req, res) {
     var Aspects = {
-        // Contains the top and bottom row of aspects.
-        
-            
-                "AspectRows": [
-
-
-                {
-                        "AspectColumns": [
-                    {
-                        "ImageHolder": "images/ImageHolder.png",
-                        "Image": "images/Login.jpg",
-                        "AspectLink": "/Login",
-                        "ImageClass": "top-image",
-                        "HolderClass": "top-holder"
-                    },
-
+        // Contains the top and bottom row of aspects.            
+		"AspectRows": [
+			{
+				"AspectColumns": [
                     {
                         "ImageHolder": "images/ImageHolder.png",
                         "Image": "images/Emotion.png",
@@ -58,7 +46,12 @@ exports.view = function (req, res) {
                 ]
             }
         ],
-        "HomeButton": "images/HomeSymbol.png"
+		"LoginDetails":
+		{
+			"LoginName": "Obama",
+			"LoginImage": "images/Login.jpg",
+			"AspectLink": "/Login"
+		}
     };
 
     // Send this data to Home.handlebars.
