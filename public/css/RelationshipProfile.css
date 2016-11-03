@@ -1,76 +1,15 @@
-#top-window {
-    position: relative;
-    background-color: #4fb8ea;
-    width: 100%;
-}
-
-.background {
-    position: relative;
-}
-
-.background:after {
-     content:"";
-     background: url("../images/BackgroundImage.png") no-repeat;
-     background-size: cover;
-     opacity: 0.85;
-     position: absolute;
-     z-index: -1;
-     top: 0;
-     bottom: 0;
-     left: 0;
-     right: 0;
-}
-
 .navbar-custom {
     background-color: #4fb8ea;
     border-radius: 0;
 }
 
-.navbar-color{
+.navbar-color {
     color: #ffffff;
-}
-
-.aspect-top-image {
-    position: relative;
-    width: 40%;
-    height: 40%;
-    z-index: 1;
-    margin-top: 205px;
-}
-
-.aspect-bot-image {
-    position: relative;
-    width: 40%;
-    height: 40%;
-    z-index: 1;
-    margin-top: -20px;
-}
-
-.aspect-circle {
-    position: absolute;
-    width: 60%;
-    height: auto;
-    z-index: 2;
-    top: -23%;
-    left: 20%;
-}
-
-.aspect-text {
-    position: relative;
-    width: 75%;
-    height: auto;
-    margin-top: -10%;
-}
-
-.home-button {
-    position: relative;
-    width: 2%;
-    height: 2%;
-}
-
-.image-overlay {
-    width: 100%;
-    position: relative;
+	font-size: 25px;
+	font-family: "Trebuchet MS";
+	margin-top: 18px;
+	margin-left: 15px;
+	font-style: italic;
 }
 
 /*
@@ -80,16 +19,6 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
     padding-top: 50px;
-}
-
-
-/*
- * Global add-ons
- */
-
-.sub-header {
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
 }
 
 /*
@@ -109,15 +38,16 @@ body {
     display: none;
 }
 
-.home-img {
+.home-button {
 	width: 3%;
 	height: 3%;
+	margin: 7px;
 }
 
 @media (min-width: 768px) {
     .sidebar {
         position: fixed;
-        top: 51px;
+        top: 52px;
         bottom: 0;
         left: 0;
         z-index: 1000;
@@ -137,57 +67,31 @@ body {
     margin-left: -20px;
 }
 
-    .nav-sidebar > li > a {
-        padding-right: 20px;
-        padding-left: 20px;
-    }
-
-    .nav-sidebar > .active > a,
-    .nav-sidebar > .active > a:hover,
-    .nav-sidebar > .active > a:focus {
-        color: #fff;
-        background-color: #428bca;
-    }
-
-
-/*
- * Main content
- */
-
-.main {
-    padding: 20px;
+.nav-sidebar > li > a {
+	padding-right: 20px;
+	padding-left: 20px;
 }
 
-@media (min-width: 768px) {
-    .main {
-        padding-right: 40px;
-        padding-left: 40px;
-    }
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+	color: #fff;
+	background-color: #428bca;
 }
 
-.main .page-header {
-    margin-top: 0;
+.nav-sidebar > .add,
+.nav-sidebar > .add > a:hover,
+.nav-sidebar > .add > a:focus {
+	background-color: #b3ffe0;
 }
 
-
-/*
- * Placeholder dashboard ideas
- */
-
-.placeholders {
-    margin-bottom: 30px;
-    text-align: center;
+.nav-sidebar > .remove,
+.nav-sidebar > .remove > a:hover,
+.nav-sidebar > .remove > a:focus {
+	background-color: #ff9999;
 }
 
-    .placeholders h4 {
-        margin-bottom: 0;
-    }
-
-.placeholder {
-    margin-bottom: 20px;
+.name-text {
+	text-align: center;
+	font-size: 40px;
 }
-
-    .placeholder img {
-        display: inline-block;
-        border-radius: 50%;
-    }

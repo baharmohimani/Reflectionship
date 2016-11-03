@@ -11,28 +11,14 @@
     <link href="/css/RelationshipProfile.css" rel="stylesheet" />
 </head>
 
-<body class="background">
+<body>
     <!-- Top bar displaying the profile's picture and name, and the return home button. -->
     <nav class="navbar navbar-custom navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand navbar-color" href="#">{{AspectName}}</a>
+                <label class="navbar-color navbar-aspect">{{AspectName}}</label>
             </div>
             <div id="navbar" class="navbar-collapse collapse" color="black">
-                <ul class="nav navbar-nav navbar-right">
-                    <ul class="nav navbar-nav navbar-right">
-                    <li><a href="./ConversationIdeas" class="navbar-color">ConversationIdeas</a></li>
-                    <li><a href="./EmotionTracker" class="navbar-color">EmotionTracker</a></li>
-                    <li><a href="./RelationshipProfile/Obama" class="navbar-color">RelationshipProfile</a></li>
-                    <li><a href="./SwitchProfile" class="navbar-color">SwitchProfile</a></li>
-                </ul>
-                </ul>
                 <a href="{{HomeLink}}">
                     <img class="home-button navbar-right" src="{{HomeButton}}" />
                 </a>
@@ -44,14 +30,15 @@
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
-                    <li class="active"><a href="#">Personal Info<span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Likes</a></li>
-                    <li><a href="#">Dislikes</a></li>
-                    <li><a href="#">Add +</a></li>
+                    <li class="category active"><a>Personal Info</a></li>
+                    <li class="category"><a>Likes</a></li>
+                    <li class="category last"><a>Dislikes</a></li>
+                    <li class="add"><a>Add Category</a></li>
+                    <li class="remove"><a>Remove Category</a></li>
                 </ul>
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <h1 class="page-header">{{ProfileName}}</h1>
+                <h1 class="page-header name-text">{{ProfileName}}</h1>
                 <h2 class="sub-header">Personal Info</h2>
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -61,11 +48,14 @@
                                 <th>Data</th>
                             </tr>
                         </thead>
+                        
                         <tbody>
+                            {{#each SubCategory}}
                             <tr>
                                 <td>Date of Birth</td>
                                 <td>July 4th, 1776</td>
                             </tr>
+                            {{#end}}
                             <tr>
                                 <td>Age</td>
                                 <td>21</td>

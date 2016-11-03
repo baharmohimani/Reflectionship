@@ -25,8 +25,6 @@ function initializePage() {
  * the aspect image element.
  */
 function imageToText(event) {
-    console.log("Mouse has entered this element!");
-
     // Grab the hyperlink parent of the image.
     var aParent = $(event.target).closest("a");
     
@@ -55,8 +53,6 @@ function imageToText(event) {
  * the aspect image element.
  */
 function textToImage(event) {
-    console.log("Mouse has left this element!");
-
     // Grab the hyperlink parent of the image.
     var aParent = $(event.target).closest("a");
 
