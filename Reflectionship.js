@@ -46,7 +46,7 @@ app.get("/RelationshipProfile/:ProfileName", relaprofile.view);
 app.get("/EmotionTracker", emotion.view);
 app.get("/ConversationIdeas", conversation.view);
 app.get("/SwitchProfile", switchusers.view);
-app.get("/LoginRoutes", login.view);
+app.get("/Login", login.view);
 
 http.createServer(app).listen(app.get("port"), function(){
   console.log("Express server listening on port " + app.get("port"));
