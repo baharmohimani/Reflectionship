@@ -11,7 +11,7 @@ var handlebars = require("express3-handlebars")
 var home = require("./routes/HomeRoutes");
 var emotion = require("./routes/EmotionTrackerRoutes");
 var conversation = require("./routes/ConversationIdeasRoutes");
-var relaprofile = require("./routes/RelationshipProfileRoutes");
+var relprofile = require("./routes/RelationshipProfileRoutes");
 var switchusers = require("./routes/SwitchProfileRoutes");
 var login = require("./routes/LoginRoutes");
 
@@ -42,7 +42,9 @@ app.get("/", home.view);
 
 /* When switching to the profile name, we need to send in the name 
 of the person whose profile we want to look at. */
-app.get("/RelationshipProfile/:ProfileName", relaprofile.view);
+app.get("/RelationshipProfile/Personal", relprofile.personal);
+app.get("/RelationshipProfile/Likes", relprofile.likes);
+app.get("/RelationshipProfile/Dislikes", relprofile.dislikes);
 app.get("/EmotionTracker", emotion.view);
 app.get("/ConversationIdeas", conversation.view);
 app.get("/SwitchProfile", switchusers.view);

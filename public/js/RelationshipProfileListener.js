@@ -13,6 +13,7 @@ function initializePage() {
 }
 
 function setActiveCategory(event) {
+    preventDefault();
     // Grab the parent of all of the categories.
     var categoryPar = $(this).closest("ul");
 
