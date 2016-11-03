@@ -4,16 +4,21 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Switch Profile</title>
+    <title>Login</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet" />
     <!-- Include any needed CSS files below. -->
-    <link href="/css/SwitchProfile.css" rel="stylesheet" />
+    <link href="/css/Login.css" rel="stylesheet" />
 </head>
 
 <body class="background">
-
-     <nav class="navbar navbar-custom navbar-fixed-top">
+    <!-- Top bar displaying the profile's picture and name, and the return home button. -->
+    <nav class="navbar navbar-fixed-top navbar-custom">
+        <div class="container">
+            <img class="img-responsive login-button left-block" src="images/Login.jpg" width="55" height="55"/>
+        </div>
+    </nav>
+    <nav class="navbar navbar-custom navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -38,5 +43,36 @@
         </div>
     </nav>
 
-</body>
+    <h2>Login Form</h2>
+
+<div class="container-fluid">
+  <div class="imgcontainer">
+    <img src="images/Login.jpg" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+        
+    <button type="submit">Login</button>
+    <input type="checkbox" checked="checked"> Remember me
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</div>
+
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/Listener.js"></script>
+
+
+  </body>
+
 </html>

@@ -3,10 +3,21 @@
 exports.view = function (req, res) {
     var Aspects = {
         // Contains the top and bottom row of aspects.
-        "AspectRows": [
-            // Top row - contains the emotion tracker and conversation ideas aspects.
-            {
-                "AspectColumns": [
+        
+            
+                "AspectRows": [
+
+
+                {
+                        "AspectColumns": [
+                    {
+                        "ImageHolder": "images/ImageHolder.png",
+                        "Image": "images/Login.jpg",
+                        "AspectLink": "/Login",
+                        "ImageClass": "top-image",
+                        "HolderClass": "top-holder"
+                    },
+
                     {
                         "ImageHolder": "images/ImageHolder.png",
                         "Image": "images/Emotion.png",

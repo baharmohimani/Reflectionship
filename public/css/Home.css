@@ -5,8 +5,8 @@
 .background:after {
      content:"";
      background: url("../images/BackgroundImage.png") no-repeat;
-     background-size: cover;
-     opacity: 0.85;
+     background-size: 80px 60px;
+     opacity: 0.58;
      position: absolute;
      z-index: -1;
      top: 0;
