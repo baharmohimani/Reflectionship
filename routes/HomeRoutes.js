@@ -45,13 +45,7 @@ exports.view = function (req, res) {
                     }
                 ]
             }
-        ],
-		"LoginDetails":
-		{
-			"LoginName": "Obama",
-			"LoginImage": "images/Login.jpg",
-			"AspectLink": "/Login"
-		}
+        ]
     };
 
     // Send this data to Home.handlebars.

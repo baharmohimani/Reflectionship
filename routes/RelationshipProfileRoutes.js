@@ -3,7 +3,7 @@
 var ProfileInfo = {
     "AspectName": "Relationship Profile",
     "HomeButton": "../images/HomeSymbol.png",
-    "HomeLink": "/",
+    "HomeLink": "/Home",
     "ProfileName": "Obama",
     "ProfileImage": "../images/ProfileImage.png",
     "CategoryData": {}

@@ -2,7 +2,7 @@ exports.view = function (req, res) {
     var EmotionInfo = {
         "AspectName": "Emotion Tracker",
         "HomeButton": "../images/HomeSymbol.png",
-        "HomeLink": "/"
+        "HomeLink": "/Home"
     };
 
     res.render("EmotionTracker", EmotionInfo);

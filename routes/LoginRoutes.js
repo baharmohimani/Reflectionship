@@ -1,8 +1,8 @@
 exports.view = function (req, res) {
     var LoginInfo = {
-        "AspectName": "login",
+        "AspectName": "Login",
         "HomeButton": "../images/HomeSymbol.png",
-        "HomeLink": "/"
+        "HomeLink": "/Home"
     };
 
     res.render("login", LoginInfo);

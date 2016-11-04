@@ -15,7 +15,7 @@
     <!-- Top bar displaying the profile's picture and name, and the return home button. -->
     <nav class="navbar navbar-fixed-top navbar-custom">
         <div class="container">
-            <img class="img-responsive login-button left-block" src="images/Login.jpg" width="55" height="55"/>
+            <img class="img-responsive login-button left-block" src="images/Login.jpg" width="55" height="55" />
         </div>
     </nav>
     <nav class="navbar navbar-custom navbar-fixed-top">
@@ -30,14 +30,6 @@
                 <a class="navbar-brand navbar-color" href="#">{{AspectName}}</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse" color="black">
-                <ul class="nav navbar-nav navbar-right">
-                    <ul class="nav navbar-nav navbar-right">
-                    <li><a href="./ConversationIdeas" class="navbar-color">ConversationIdeas</a></li>
-                    <li><a href="./EmotionTracker" class="navbar-color">EmotionTracker</a></li>
-                    <li><a href="./RelationshipProfile/Obama" class="navbar-color">RelationshipProfile</a></li>
-                    <li><a href="./SwitchProfile" class="navbar-color">SwitchProfile</a></li>
-                </ul>
-                </ul>
                 <a href="{{HomeLink}}">
                     <img class="home-button navbar-right" src="{{HomeButton}}" />
                 </a>
@@ -47,34 +39,31 @@
 
     <h2>Login Form</h2>
 
-<div class="container-fluid">
-  <div class="imgcontainer">
-    <img src="images/Login.jpg" alt="Avatar" class="avatar" width="220" height=auto align="center" hspace="50">
-  </div>
+    <div class="container-fluid">
+        <div class="imgcontainer">
+            <img src="images/Login.jpg" alt="Avatar" class="avatar" width="220" hspace="50">
+        </div>
 
-  <div class="container">
-    <label><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+        <div class="container">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
 
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-        
-    <button type="submit">Login</button>
-    <input type="checkbox" checked="checked"> Remember me
-  </div>
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-</div>
+            <button type="submit">Login</button>
+            <input type="checkbox" checked="checked"> Remember me
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/Listener.js"></script>
-
-
-  </body>
+</body>
 
 </html>

@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Conversation Ideas</title>
-    <link href=" /css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet" />
     <!-- Include any needed CSS files below. -->
     <link href="/css/ConversationIdeas.css" rel="stylesheet" />
@@ -13,7 +13,7 @@
 
 <body class="background">
 
-     <nav class="navbar navbar-custom navbar-fixed-top">
+    <nav class="navbar navbar-custom navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -25,15 +25,6 @@
                 <a class="navbar-brand navbar-color" href="#">{{AspectName}}</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse" color="black">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="./ConversationIdeas" class="navbar-color">ConversationIdeas</a></li>
-                    <li><a href="./EmotionTracker" class="navbar-color">EmotionTracker</a></li>
-                    <li><a href="./RelationshipProfile/Obama" class="navbar-color">RelationshipProfile</a></li>
-                    <li><a href="./SwitchProfile" class="navbar-color">SwitchProfile</a></li>
-                    <!-- <li><a href= "./" class="tablinks highlighted">Home</a></li> -->
-                </ul>
-
-                
                 <a href="{{HomeLink}}">
                     <img class="home-button navbar-right" src="{{HomeButton}}" />
                 </a>
@@ -41,23 +32,20 @@
         </div>
     </nav>
 
-<div>
-  <form action="action_page.php">
-    
-    <label for="fname">Try askig your significant other: </label>
-    <input type="text" id="fname" name="firstname">
-    
-    </select>
-  
-    <!-- <input type="submit" value="Okay!"> -->
-    <!-- <input type="submit" value="No thanks, can i see another?"> -->
+    <div>
+        <form action="action_page.php">
 
-<a href="#" class="button">No thanks, can i see another?</a>
-<button class="button">Okay!</button>
-<!-- <input type="button" class="button" value="Input Button"> -->
+            <label for="fname">Try askig your significant other: </label>
+            <input type="text" id="fname" name="firstname" />
+            <!-- <input type="submit" value="Okay!"> -->
+            <!-- <input type="submit" value="No thanks, can i see another?"> -->
 
-  </form>
-</div>
+            <a href="#" class="button">No thanks, can i see another?</a>
+            <button class="button">Okay!</button>
+            <!-- <input type="button" class="button" value="Input Button"> -->
+
+        </form>
+    </div>
 
 </body>
 </html>

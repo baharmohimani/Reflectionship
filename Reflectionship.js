@@ -38,17 +38,14 @@ if ("development" == app.get("env")) {
 }
 
 // Add routes here
-app.get("/", home.view);
-
-/* When switching to the profile name, we need to send in the name 
-of the person whose profile we want to look at. */
+app.get("/", login.view);
+app.get("/Home", home.view)
 app.get("/RelationshipProfile/Personal", relprofile.personal);
 app.get("/RelationshipProfile/Likes", relprofile.likes);
 app.get("/RelationshipProfile/Dislikes", relprofile.dislikes);
 app.get("/EmotionTracker", emotion.view);
 app.get("/ConversationIdeas", conversation.view);
 app.get("/SwitchProfile", switchusers.view);
-app.get("/Login", login.view);
 
 http.createServer(app).listen(app.get("port"), function () {
     console.log("Express server listening on port " + app.get("port"));
