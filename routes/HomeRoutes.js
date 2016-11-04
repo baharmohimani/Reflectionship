@@ -45,7 +45,8 @@ exports.view = function (req, res) {
                     }
                 ]
             }
-        ]
+		],
+        "HomeButton": "images/HomeSymbol.png"
     };
 
     // Send this data to Home.handlebars.
