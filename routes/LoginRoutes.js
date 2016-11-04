@@ -5,5 +5,5 @@ exports.view = function (req, res) {
         "HomeLink": "/Home"
     };
 
-    res.render("login", LoginInfo);
+    res.render("Login", LoginInfo);
 };
