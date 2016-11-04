@@ -35,13 +35,11 @@
     <div>
         <form action="action_page.php">
 
-            <label for="fname">Try askig your significant other: </label>
-            <input type="text" id="fname" name="firstname" />
-            <!-- <input type="submit" value="Okay!"> -->
-            <!-- <input type="submit" value="No thanks, can i see another?"> -->
+            <text for="fname" class="header">Try asking your significant other: </label>
+            <input type="text" id="fname" name="question" value="What is your definition of a perfect date? " readonly/>
+            <!-- <input type="submit" value="Can I see another?"> -->
 
-            <a href="#" class="button">No thanks, can i see another?</a>
-            <button class="button">Okay!</button>
+            <button onclick="question()" class="button"> Can I see another? </button>
             <!-- <input type="button" class="button" value="Input Button"> -->
 
         </form>

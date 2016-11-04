@@ -9,5 +9,9 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
+    // $("#id01").click(submit);
+}
+
+function submit(event) {
 
 }
