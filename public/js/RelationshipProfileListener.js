@@ -10,6 +10,8 @@ $(document).ready(function() {
  */
 function initializePage() {
     $(".category").click(setActiveCategory);
+    $(".add").click(addCategory);
+    $(".remove").click(removeCategory);
 }
 
 function setActiveCategory(event) {
@@ -23,4 +25,31 @@ function setActiveCategory(event) {
 
     // Then, set the one element that was clicked (this element) to active.
     $(this).addClass("active");
+}
+
+function addCategory(event) {
+    console.log("Hello");
+    // Then, remove the 'last' class element, new element will be last.
+    $(".last").removeClass("last");
+
+    // Then, find the parent unsorted list.
+    var categoryPar = $(this).closest("ul");
+
+    // Then, add the new element.
+    categoryPar.append("<li class='category'> <a href='/RelationshipProfile/Personal'>New Category</a> </li>");
+
+    var lastIndex = $(".category").length - 1;
+    var lastElem = $(".category").get(lastIndex);
+    $(lastElem).addClass("last");
+}
+
+function removeCategory(event) {
+    console.log($(".category").length);
+    
+    $(".category.last").remove();
+
+    $($(".category").get($(".category").length - 1)).addClass("last");
+    
+    // Then, find the parent unsorted list.
+    var categoryPar = $(this).closest("ul");
 }
