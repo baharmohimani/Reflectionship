@@ -11,3 +11,7 @@ $(document).ready(function() {
 function initializePage() {
 
 }
+
+function question() {
+	prompt( Which parent do you identify with most? );
+}
