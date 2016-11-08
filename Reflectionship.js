@@ -37,6 +37,16 @@ if ("development" == app.get("env")) {
   app.use(express.errorHandler());
 }
 
+app.post('/getQuestion', function(req, res){
+    var qArr = ["a", "b", "c", "d", "e", "f"];
+
+    //Get random index from qArr    
+    var qArrLen = qArr.length; 
+    var ranNum = Math.floor(Math.random()* (qArrLen - 1)) + 0;  
+
+    res.send(qArr[ranNum]); 
+});
+
 // Add routes here
 app.get("/", login.view);
 app.get("/Home", home.view)
