@@ -12,12 +12,12 @@
 
 
 
-
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <style>
 .city {display:none;}
 </style>
 <body>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <div class="w3-container">
   <p >View the Graphs below:</p>
@@ -31,9 +31,7 @@
 
 
   <div id="London" class="w3-container w3-border city">
-    
       <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
@@ -72,7 +70,10 @@
   <div id="Paris" class="w3-container w3-border city">
 
    
+   <!--
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+-->
+
   <script type="text/javascript">
     google.charts.load("current", {packages:['corechart']});
     google.charts.setOnLoadCallback(drawChart);
@@ -118,7 +119,9 @@
  
  
   <head>
+    <!--
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  -->
     <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
@@ -222,11 +225,11 @@ function openCity(evt, cityName) {
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-12" style="margin:300px; margin-top:200px;">
+            <div class="col-xs-6" style="margin:300px; margin-top:200px;">
                 <div class="box box-blue box-example-movie">
                     <div class="box-header" style="font-size:30px;">Emotional State</div>
                     <div class="box-body">
-                        <select id="example-movie" name="Emotional State" autocomplete="off">
+                        <select id="emotionTracker" name="Emotional State" autocomplete="off">
                             <option value="The World is About to End...">The World is About to End...</option>
                             <option value="Very Unhappy...">Very Unhappy...</option>
                             <option value="Not Happy">Not Happy</option>
@@ -241,10 +244,10 @@ function openCity(evt, cityName) {
             </div>
         </div>
         <div class="row" style="margin-left:300px; margin-bottom:350px; bottom:500px;">
-            <div class="col-xs-6">
+            <div class="col-xs-3">
                 <button type="button" calss="button" onclick="alert('Your emotional status today has been set!')">Enter Emotional Status</button>
             </div>
-            <div class="col-xs-6">
+            <div class="col-xs-3">
                 <button type="button" calss="button" onclick="alert('Your emotional status for today has been reset!')">Reset Emotional Status</button>
             </div>
         </div>

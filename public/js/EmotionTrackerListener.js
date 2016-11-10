@@ -3,11 +3,21 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+
 })
 
 /*
  * Function that is called when the document is ready.
  */
 function initializePage() {
+    console.log("included");
+
+    $('#emotionTracker').hover(function (e) {
+        e.preventDefault();
+
+        var emotion = $('#emotionTracker').val();
+        console.log("value: " + emotion);        
+    })
+
 
 }

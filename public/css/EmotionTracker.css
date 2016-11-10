@@ -115,7 +115,7 @@ body {
 	height: 3%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 100vh) {
     .sidebar {
         position: fixed;
         top: 51px;
@@ -159,7 +159,7 @@ body {
     padding: 20px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 100vh) {
     .main {
         padding-right: 40px;
         padding-left: 40px;
