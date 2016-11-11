@@ -1,0 +1,26 @@
+{
+    "AspectName": "Relationship Profile",
+    "HomeButton": "../images/HomeSymbol.png",
+    "HomeLink": "/Home",
+    "CurrentName": "NOT AVAILABLE - SELECT PROFILE FROM PROFILE SELECTION SCREEN."
+	"CurrentID": -1,
+	
+	"AllProfiles": [
+		"Jack": {
+			"Info": [
+			],
+			"Likes": [
+			],
+			"Dislikes": [
+			]
+		},
+		"Jill": {
+			"Info": [
+			],
+			"Likes": [
+			],
+			"Dislikes": [
+			]
+		}
+	]
+}

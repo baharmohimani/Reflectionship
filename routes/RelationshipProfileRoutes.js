@@ -10,7 +10,7 @@ var ProfileInfo = {
 }
 
 var PersonalInfo = {
-    "CategoryDesc": "Personal Info",
+    "CategoryDesc": "Info",
     "TableHeaderInfo": "Information",
     "TableHeaderData": "Data",
     "TableBodyRows": [

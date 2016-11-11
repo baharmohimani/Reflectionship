@@ -10,8 +10,18 @@ $(document).ready(function() {
  */
 function initializePage() {
 
+    $("#another-btn").on('click', function(){
+        $.post('/getQuestion', null, function(res){
+            console.log(res); 
+            $("#fname").val(res); 
+
+        });
+
+    }); 
+
+
 }
 
-function question() {
-	prompt( Which parent do you identify with most? );
-}
+// function question() {
+// 	prompt( Which parent do you identify with most? );
+// }
