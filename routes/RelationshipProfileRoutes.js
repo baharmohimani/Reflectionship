@@ -1,9 +1,10 @@
 /* Loads the relationship Profile page. */
 
-var Profile = require("../public/json/RelationshipProfile.json");
-var fs = require('fs');
+// var Profile = require("../public/json/RelationshipProfile.json");
+// var fs = require('fs');
 
 exports.profileInfo = function (req, res) {
+    /*
     // First, grab the required data for all Profiles.
     var HomeButton = Profile["HomeButton"];
     var HomeLink = Profile["HomeLink"];
@@ -17,9 +18,10 @@ exports.profileInfo = function (req, res) {
     var ProfileData = { HomeButton, HomeLink, ProfileUsername, Detail };
 
     // Render the page using the person's information.
-    res.render("RelationshipProfile", ProfileData);
+    res.render("RelationshipProfile", ProfileData);*/
 }
 
+/*
 exports.getDetails = function (req, res) {
     var ProfileID = Profile["UserID"];
     var Detail = null;
@@ -65,4 +67,4 @@ exports.submitInfo = function (req) {
     }
 
     fs.writeFile("./public/json/RelationshipProfile.json", JSON.stringify(Profile), 'utf8');
-}
+}*/

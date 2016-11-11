@@ -64,6 +64,7 @@ function editInfo(event) {
     if ($(".edit-text td input").length > 0)
         return;
 
+    /*
     $("#edit-button").hide()
     $("#delete-button").fadeIn(1000);
     $("#save-button").fadeIn(1000);
@@ -80,9 +81,11 @@ function editInfo(event) {
     // Add an empty row for adding new subcategories.
     var tableBody = $(".edit-text").closest("tbody");
     tableBody.append("<tr class='edit-text'><td class='subcategory'><input type='text' value=''></td><td class='subcategory-data'><input type='text' value=''></td><td class='delete-active'><a></a></td></tr>");
+    */
 }
 
 function saveInfo() {
+    /*
     if ($(".edit-text td input").length == 0)
         return;
 
@@ -122,6 +125,7 @@ function saveInfo() {
     console.log(SaveDataJSON);
 
     $.post("/RelationshipProfile/Save", SaveDataJSON);
+    */
 }
 
 function saveInfoEvent(event) {
@@ -133,7 +137,7 @@ function deleteInfo(event) {
     var deleteRow = $(this).closest("tr");
     deleteRow.remove();
 }
-
+/*
 function switchInfo(event) {
     $.get("/RelationshipProfile/0", endSwitch);
     DetailID = 0;
@@ -147,9 +151,10 @@ function switchLikes(event) {
 function switchDislikes(event) {
     $.get("/RelationshipProfile/2", endSwitch);
     DetailID = 2;
-}
+}*/
 
 function endSwitch(result) {
+    /*
     $("#profile-title").text(result["ProfileUsername"] + "'s " + result["Detail"]["CategoryDesc"]);
     console.log(result["Detail"]["TableBodyRows"].length);
 
@@ -169,5 +174,5 @@ function endSwitch(result) {
     $(".delete-active").click(deleteInfo);
     $("#save-button").click(saveInfoEvent);
 
-    saveInfo();
+    saveInfo();*/
 }
