@@ -52,10 +52,12 @@ app.post('/getQuestion', function(req, res){
 
 // Add routes here
 app.get("/", login.view);
-app.get("/Home", home.view)
-app.get("/RelationshipProfile/Personal", relprofile.personal);
-app.get("/RelationshipProfile/Likes", relprofile.likes);
-app.get("/RelationshipProfile/Dislikes", relprofile.dislikes);
+app.get("/Home", home.view);
+
+app.get("/RelationshipProfile/", relprofile.profileInfo);
+app.get("/RelationshipProfile/:DetailID", relprofile.getDetails);
+app.post("/RelationshipProfile/Save", relprofile.submitInfo);
+
 app.get("/EmotionTracker", emotion.view);
 app.get("/ConversationIdeas", conversation.view);
 app.get("/SwitchProfile", switchusers.view);

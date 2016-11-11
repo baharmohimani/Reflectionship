@@ -28,16 +28,16 @@
                 <i class="toggle-right fa fa-bars"></i>
             </a>
             <li class="sidebar-brand">
-                <a href="#">{{ProfileName}}</a>
+                <a href="#">Menu</a>
             </li>
             <li>
-                <a class="disabled" href="#">{{ProfileName}}'s Info</a>
+                <a id="info" class="disabled" href="#">{{ProfileUsername}}'s Info</a>
             </li>
             <li>
-                <a class="disabled" href="#">{{ProfileName}}'s Likes</a>
+                <a id="likes" class="disabled" href="#">{{ProfileUsername}}'s Likes</a>
             </li>
             <li>
-                <a class="disabled" href="#">{{ProfileName}}'s Dislikes</a>
+                <a id="dislikes" class="disabled" href="#">{{ProfileUsername}}'s Dislikes</a>
             </li>
         </ul>
     </nav>
@@ -45,17 +45,17 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 main">
-                <h1 class="page-header name-text">{{ProfileName}}'s {{CategoryData.CategoryDesc}}</h1>
+                <h3 id="profile-title" class="page-header name-text">{{ProfileUsername}}'s {{Detail.CategoryDesc}}</h3>
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>{{CategoryData.TableHeaderInfo}}</th>
-                                <th>{{CategoryData.TableHeaderData}}</th>
+                                <th>Information</th>
+                                <th>Data</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            {{#each CategoryData.TableBodyRows}}
+                        <tbody id="profile-body">
+                            {{#each Detail.TableBodyRows}}
                             <tr class="edit-text">
                                 <td class="subcategory">{{Subcategory}}</td>
                                 <td class="subcategory-data">{{SubcategoryInfo}}</td>

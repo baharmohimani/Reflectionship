@@ -97,12 +97,6 @@
             color: #ffffff;
         }
 
-            .sidebar-nav li a:hover {
-                text-decoration: none;
-                color: #000;
-                background: rgba(255,255,255,0.8);
-            }
-
             .sidebar-nav li a:active,
             .sidebar-nav li a:focus {
                 text-decoration: none;
@@ -213,5 +207,6 @@ body {
 
 .name-text {
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
+    margin-top: 45px;
 }
