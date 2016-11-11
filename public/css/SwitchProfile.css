@@ -1,3 +1,18 @@
+.home {
+    position: relative;
+    display: block;
+    width: 13%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-bar {
+    border-bottom-width: 5px;
+    border-bottom-color: #7ce1ff;
+}
 #top-window {
     position: relative;
     background-color: #4fb8ea;
@@ -191,3 +206,18 @@ body {
         display: inline-block;
         border-radius: 50%;
     }
+
+    button {
+    background-color: #4fb8ea;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left:5%;
+}
+
