@@ -46,7 +46,7 @@ exports.getDetails = function (req, res) {
 }
 
 exports.submitInfo = function (req) {
-    
+
     var ProfileID = Profile["UserID"];
     var ProfileUser = Profile["AllProfiles"][ProfileID];
 

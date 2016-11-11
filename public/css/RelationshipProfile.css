@@ -58,7 +58,6 @@
     background-color: transparent;
     -webkit-transition: all 0.6s ease 0s;
     -moz-transition: all 0.6s ease 0s;
-    -ms-transition: all 0.6s ease 0s;
     -o-transition: all 0.6s ease 0s;
     transition: all 0.6s ease 0s;
 }
@@ -68,7 +67,6 @@
         background-color: steelblue;
         -webkit-transition: all 0.4s ease 0s;
         -moz-transition: all 0.4s ease 0s;
-        -ms-transition: all 0.4s ease 0s;
         -o-transition: all 0.4s ease 0s;
         transition: all 0.4s ease 0s;
     }

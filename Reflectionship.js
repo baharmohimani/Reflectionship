@@ -34,20 +34,20 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // development only
 if ("development" == app.get("env")) {
-  app.use(express.errorHandler());
+    app.use(express.errorHandler());
 }
 
-app.post('/getQuestion', function(req, res){
+app.post('/getQuestion', function (req, res) {
     var qArr = ["Which parent do you identify with most? ", "What is your biggest pet peeve? ",
-     "If you could fix one world problem, what would it be?", "If you only had three wishes, what would they be? ", 
+     "If you could fix one world problem, what would it be?", "If you only had three wishes, what would they be? ",
      "What is your favorite thing about yourself?", "What is something you regret doing? ", "If you could have any job in the world, what would it be?",
      "When was the last time you cried? "];
 
     //Get random index from qArr    
-    var qArrLen = qArr.length; 
-    var ranNum = Math.floor(Math.random()* (qArrLen - 1)) + 0;  
+    var qArrLen = qArr.length;
+    var ranNum = Math.floor(Math.random() * (qArrLen - 1)) + 0;
 
-    res.send(qArr[ranNum]); 
+    res.send(qArr[ranNum]);
 });
 
 // Add routes here
@@ -58,7 +58,7 @@ app.get("/RelationshipProfile/", relprofile.profileInfo);
 app.get("/RelationshipProfile/:DetailID", relprofile.getDetails);
 app.post("/RelationshipProfile/Save", relprofile.submitInfo);
 
-app.get("/EmotionTracker", emotion.view);
+// app.get("/EmotionTracker", emotion.view);
 app.get("/ConversationIdeas", conversation.view);
 
 app.get("/SwitchProfile", switchusers.view);

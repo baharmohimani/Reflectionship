@@ -1,8 +1,8 @@
 'use strict';
 
 // Call this function when the page loads (the "ready" event)
-$(document).ready(function() {
-	initializePage();
+$(document).ready(function () {
+    initializePage();
 
 })
 
@@ -16,7 +16,7 @@ function initializePage() {
         e.preventDefault();
 
         var emotion = $('#emotionTracker').val();
-        console.log("value: " + emotion);        
+        console.log("value: " + emotion);
     })
 
 

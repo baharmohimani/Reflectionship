@@ -14,6 +14,7 @@
     border-bottom-width: 5px;
     border-bottom-color: #7ce1ff;
 }
+
 #top-window {
     position: relative;
     background-color: #4fb8ea;
@@ -21,28 +22,28 @@
 }
 
 .background {
-    position: 
+    
 }
 
-.background:after {
-     content:"";
-     background: url("../images/BackgroundImage.png") no-repeat;
-     background-size: cover;
-     opacity: 0.85;
-     position: absolute;
-     z-index: -1;
-     top: 0;
-     bottom: 0;
-     left: 0;
-     right: 0;
-}
+    .background:after {
+        content: "";
+        background: url("../images/BackgroundImage.png") no-repeat;
+        background-size: cover;
+        opacity: 0.85;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
 
 .navbar-custom {
     background-color: #4fb8ea;
     border-radius: 0;
 }
 
-.navbar-color{
+.navbar-color {
     color: #ffffff;
 }
 
@@ -126,8 +127,8 @@ body {
 }
 
 .home-img {
-	width: 3%;
-	height: 3%;
+    width: 3%;
+    height: 3%;
 }
 
 @media (min-width: 768px) {
@@ -229,7 +230,7 @@ input[type=submit] {
 }
 
 /*input[type=submit]:hover {*/
-    /*background-color: #45a049;*/
+/*background-color: #45a049;*/
 /*}*/
 
 button {
@@ -243,12 +244,11 @@ button {
     font-size: 14px;
     margin: 4px 2px;
     cursor: pointer;
-    margin-left:25%;
+    margin-left: 25%;
 }
 
 .header {
     font-size: 17px;
-    font-style: bold;
+    font-weight: bold;
     color: white;
 }
-
