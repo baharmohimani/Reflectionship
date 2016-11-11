@@ -1,5 +1,3 @@
-'use strict';
-
 var DetailID = 0;
 
 // Call this function when the page loads (the "ready" event)
@@ -19,7 +17,7 @@ function initializePage() {
     $("#menu-toggle, .sidebar-nav li a").click(toggleMenu);
 
     $("#edit-button").click(editInfo);
-    $("#save-button").click(saveInfoEvent);
+    $("#save-button").click(saveInfo);
 
     $(".delete-active").click(deleteInfo);
 
@@ -82,7 +80,7 @@ function editInfo(event) {
     tableBody.append("<tr class='edit-text'><td class='subcategory'><input type='text' value=''></td><td class='subcategory-data'><input type='text' value=''></td><td class='delete-active'><a></a></td></tr>");
 }
 
-function saveInfo() {
+function saveInfo(event) {
     if ($(".edit-text td input").length == 0)
         return;
 
@@ -124,10 +122,6 @@ function saveInfo() {
     $.post("/RelationshipProfile/Save", SaveDataJSON);
 }
 
-function saveInfoEvent(event) {
-    saveInfo();
-}
-
 function deleteInfo(event) {
     console.log();
     var deleteRow = $(this).closest("tr");
@@ -167,7 +161,4 @@ function endSwitch(result) {
 
     // Re-register a few listeners.
     $(".delete-active").click(deleteInfo);
-    $("#save-button").click(saveInfoEvent);
-
-    saveInfo();
 }
