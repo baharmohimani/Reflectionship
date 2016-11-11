@@ -1,3 +1,6 @@
+var Profile = require("../public/json/RelationshipProfile.json");
+var fs = require('fs');
+
 exports.view = function (req, res) {
     var SwitchInfo = {
         "AspectName": "Switch Profile",
@@ -6,5 +9,9 @@ exports.view = function (req, res) {
     };
 
     res.render("SwitchProfile", SwitchInfo);
-    
 };
+
+exports.switch = function (req) {
+    Profile["UserID"] = JSON.parse(req.body.UserID);
+    fs.writeFile("./public/json/RelationshipProfile.json", JSON.stringify(Profile), 'utf8');
+}
