@@ -56,15 +56,22 @@
                         </thead>
                         <tbody>
                             {{#each CategoryData.TableBodyRows}}
-                            <tr>
-                                <td>{{Subcategory}}</td>
-                                <td>{{SubcategoryInfo}}</td>
+                            <tr class="edit-text">
+                                <td class="subcategory">{{Subcategory}}</td>
+                                <td class="subcategory-data">{{SubcategoryInfo}}</td>
+                                <td class="delete-active"><a></a></td>
                             </tr>
                             {{/each}}
                         </tbody>
                     </table>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <a id="edit-button">Edit Information</a>
+        </div>
+        <div class="row">
+            <a id="save-button">Save Information</a>
         </div>
     </div>
 

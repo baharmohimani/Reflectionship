@@ -15,6 +15,11 @@ function initializePage() {
     $(".category").click(setActiveCategory);
     $("#save").click(writeData);
     $("#menu-toggle, .sidebar-nav li a").click(toggleMenu);
+    $("#edit-button").click(editInfo);
+    $("#save-button").click(saveInfo);
+    $(".delete-active").click(deleteInfo);
+
+    $("#save-button").hide();
 
     // Load up the JSON data from the person's JSON file.
     ProfileInfo = {
@@ -89,4 +94,62 @@ function toggleMenu(event) {
     // Determines the color of the toggle button.
     $("#menu-toggle").toggleClass("menu-active");
     $("#menu-toggle").toggleClass("menu-inactive");
+}
+
+function editInfo(event) {
+    if ($(".edit-text td input").length > 0)
+        return;
+
+    $("#edit-button").hide()
+    $("#delete-button").fadeIn(1000);
+    $("#save-button").fadeIn(1000);
+
+    $(".edit-text td").each(function () {
+        var infoText = $(this).text();
+        $(this).html("<input type='text' value='" + infoText + "'>");
+    });
+
+    $(".delete-active").each(function () {
+        $(this).html("<a><i class='fa fa-times'></i></a>");
+    });
+
+    // Add an empty row for adding new subcategories.
+    var tableBody = $(".edit-text").closest("tbody");
+    console.log("Attach");
+    console.log(tableBody);
+    tableBody.append("<tr class='edit-text'><td class='subcategory'><input type='text' value=''></td><td class='subcategory-data'><input type='text' value=''></td><td class='delete-active'><a></a></td></tr>");
+}
+
+function saveInfo(event) {
+    if ($(".edit-text td input").length == 0)
+        return;
+
+    $("#save-button").hide();
+    $("#delete-button").hide();
+    $("#edit-button").fadeIn(1000);
+
+    $(".edit-text td input").each(function () {
+        var parentRow = $(this).closest("td");
+        parentRow.html(this.value);
+    });
+
+    $(".delete-active a").html
+
+    // Remove any empty rows.
+    $(".edit-text").each(function () {
+        console.log($("this > .subcategory"));
+        var categoryChild = $(this).children(".subcategory").text();
+        var categoryChildData = $(this).children(".subcategory-data").text();
+
+        if (categoryChild === "" && categoryChildData === "") {
+            $(this).remove();
+        }
+    });
+}
+
+function deleteInfo(event) {
+    console.log("Hello");
+    var deleteRow = $(this).closest("tr");
+    console.log(deleteRow);
+    deleteRow.remove();
 }

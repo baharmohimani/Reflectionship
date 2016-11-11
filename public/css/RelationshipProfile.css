@@ -1,3 +1,21 @@
+.subcategory input {
+    width: 120px;
+}
+
+.subcategory-data input {
+    width: 180px;
+}
+
+#edit-button, #save-button {
+    text-align: center;
+    font-size: large;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: block;
+    background-color: steelblue;
+    color: #ffffff;
+}
+
 .home {
     position: relative;
     display: block;
