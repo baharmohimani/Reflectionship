@@ -31,7 +31,7 @@ exports.view = function (req, res) {
                         "ImageHolder": "images/ImageHolder.png",
                         "Image": "images/Relationship.png",
                         "ImageText": "images/RelationshipProfileText.png",
-                        "AspectLink": "/RelationshipProfile",
+                        "AspectLink": "/RelationshipProfile"
                         "ImageClass": "bottom-image",
                         "HolderClass": "bottom-holder"
                     },
