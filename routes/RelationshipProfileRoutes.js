@@ -1,85 +1,68 @@
-/* Loads the relationship profile page. */
+/* Loads the relationship Profile page. */
 
-var ProfileInfo = {
-    "AspectName": "Relationship Profile",
-    "HomeButton": "../images/HomeSymbol.png",
-    "HomeLink": "/Home",
-    "ProfileName": "Obama",
-    "ProfileImage": "../images/ProfileImage.png",
-    "CategoryData": {}
+var Profile = require("../public/json/RelationshipProfile.json");
+// var fs = require('fs');
+
+exports.profileInfo = function (req, res) {
+    // First, grab the required data for all Profiles.
+    var HomeButton = Profile["HomeButton"];
+    var HomeLink = Profile["HomeLink"];
+
+    // Then, grab the specific Profile.
+    var ProfileID = Profile["UserID"];
+    var ProfileUsername = Profile["AllProfiles"][ProfileID]["Name"];
+    var Detail = Profile["AllProfiles"][ProfileID]["Info"];
+
+    // Combine the data together.
+    var ProfileData = { HomeButton, HomeLink, ProfileUsername, Detail };
+
+    // Render the page using the person's information.
+    res.render("RelationshipProfile", ProfileData);
 }
 
-var PersonalInfo = {
-    "CategoryDesc": "Personal Info",
-    "TableHeaderInfo": "Information",
-    "TableHeaderData": "Data",
-    "TableBodyRows": [
-        {
-            "Subcategory": "Date of Birth",
-            "SubcategoryInfo": "July 4th, 1776"
-        },
-        {
-            "Subcategory": "Age",
-            "SubcategoryInfo": "21"
-        },
-        {
-            "Subcategory": "Gender",
-            "SubcategoryInfo": "Male"
-        },
-        {
-            "Subcategory": "Religious Belief",
-            "SubcategoryInfo": "Freedom"
-        }
-    ]
+exports.getDetails = function (req, res) {
+    var ProfileID = Profile["UserID"];
+    var Detail = null;
+    switch (req.params.DetailID) {
+        case "0":
+            Detail = Profile["AllProfiles"][ProfileID]["Info"];
+            break;
+        case "1":
+            Detail = Profile["AllProfiles"][ProfileID]["Likes"];
+            break;
+        case "2":
+            Detail = Profile["AllProfiles"][ProfileID]["Dislikes"];
+            break;
+        default:
+            break;
+    }
+
+    var ProfileUsername = Profile["AllProfiles"][ProfileID]["Name"];
+
+    var ProfileData = { ProfileUsername, Detail };
+
+    // Send JSON along.
+    // res.json(ProfileData);
 }
 
-var Likes = {
-    "CategoryDesc": "Likes",
-    "TableHeaderInfo": "Favorites",
-    "TableHeaderData": "Data",
-    "TableBodyRows": [
-        {
-            "Subcategory": "Color",
-            "SubcategoryInfo": "Red, White, and Blue"
-        },
-        {
-            "Subcategory": "Animal",
-            "SubcategoryInfo": "Bald Eagle"
-        },
-        {
-            "Subcategory": "Food",
-            "SubcategoryInfo": "Independence"
-        }
-    ]
-}
+exports.submitInfo = function (req) {
 
-var Dislikes = {
-    "CategoryDesc": "Dislikes",
-    "TableHeaderInfo": "Not So Favorited",
-    "TableHeaderData": "Data",
-    "TableBodyRows": [
-        {
-            "Subcategory": "British Monarch",
-            "SubcategoryInfo": "King George X"
-        },
-        {
-            "Subcategory": "Drink",
-            "SubcategoryInfo": "Oppression"
-        }
-    ]
-}
+    var ProfileID = Profile["UserID"];
+    var ProfileUser = Profile["AllProfiles"][ProfileID];
 
-exports.personal = function (req, res) {
-    ProfileInfo.CategoryData = PersonalInfo;
-    res.render("RelationshipProfile", ProfileInfo);
-};
+    switch (req.body.detail) {
+        case '0':
+            ProfileUser["Info"]["TableBodyRows"] = JSON.parse(req.body.jsonStr);
+            break;
+        case '1':
+            ProfileUser["Likes"]["TableBodyRows"] = JSON.parse(req.body.jsonStr);
+            break;
+        case '2':
+            ProfileUser["Dislikes"]["TableBodyRows"] = JSON.parse(req.body.jsonStr);
+            break;
+        default:
+            break;
+    }
 
-exports.likes = function (req, res) {
-    ProfileInfo.CategoryData = Likes;
-    res.render("RelationshipProfile", ProfileInfo);
-}
-
-exports.dislikes = function (req, res) {
-    ProfileInfo.CategoryData = Dislikes;
-    res.render("RelationshipProfile", ProfileInfo);
+    // fs.writeFile("./public/json/RelationshipProfile.json", JSON.stringify(Profile), 'utf8');
 }
