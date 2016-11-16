@@ -1,7 +1,7 @@
 /* Loads the relationship Profile page. */
 
 // var Profile = require("../public/json/RelationshipProfile.json");
-var fs = require('fs');
+// var fs = require('fs');
 
 exports.profileInfo = function (req, res) {
 	/*
