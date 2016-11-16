@@ -1,4 +1,4 @@
-var datainfo = require("../public/js/examples.js");
+// var datainfo = require("../public/js/examples.js");
 
 /* Loads the relationship profile page. */
 
