@@ -1,3 +1,5 @@
+var datainfo = require("../public/js/examples.js");
+
 /* Loads the relationship profile page. */
 
 var ProfileInfo = {
