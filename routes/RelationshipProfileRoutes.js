@@ -1,5 +1,3 @@
-// var datainfo = require("../public/js/examples.js");
-
 /* Loads the relationship profile page. */
 
 var ProfileInfo = {
@@ -72,7 +70,7 @@ var Dislikes = {
 }
 
 exports.personal = function (req, res) {		
-	console.log(window.location);
+	var datainfo = require("../public/js/examples.js");
     ProfileInfo.CategoryData = PersonalInfo;
     res.render("RelationshipProfile", ProfileInfo);
 };
