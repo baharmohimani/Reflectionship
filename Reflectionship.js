@@ -39,11 +39,11 @@ if ("development" == app.get("env")) {
 
 // Add routes here
 app.get("/", login.view);
-app.get("/Home", home.view)
+// app.get("/Home", home.view)
 // app.get("/RelationshipProfile/", relprofile.profileInfo);
 // app.get("/EmotionTracker", emotion.view);
-app.get("/ConversationIdeas", conversation.view);
-app.get("/SwitchProfile", switchusers.view);
+// app.get("/ConversationIdeas", conversation.view);
+// app.get("/SwitchProfile", switchusers.view);
 
 http.createServer(app).listen(app.get("port"), function () {
     console.log("Express server listening on port " + app.get("port"));
