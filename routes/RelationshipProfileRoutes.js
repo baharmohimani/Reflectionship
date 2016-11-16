@@ -19,7 +19,7 @@ exports.profileInfo = function (req, res) {
     // Render the page using the person's information.
     res.render("RelationshipProfile", ProfileData);
 }
-
+/*
 exports.getDetails = function (req, res) {
     var ProfileID = Profile["UserID"];
     var Detail = null;
@@ -65,4 +65,4 @@ exports.submitInfo = function (req) {
     }
 
     // fs.writeFile("./public/json/RelationshipProfile.json", JSON.stringify(Profile), 'utf8');
-}
+}*/
