@@ -70,7 +70,7 @@ var Dislikes = {
 }
 
 exports.personal = function (req, res) {		
-	var datainfo = require("../public/js/examples.js");
+	// var datainfo = require("../public/js/examples.js");
     ProfileInfo.CategoryData = PersonalInfo;
     res.render("RelationshipProfile", ProfileInfo);
 };
