@@ -16,11 +16,11 @@
     <nav class="navbar navbar-custom navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <label class="navbar-color navbar-aspect">{{AspectName}}</label>
+                <label class="navbar-color navbar-aspect"></label>
             </div>
             <div id="navbar" class="navbar-collapse collapse" color="black">
-                <a href="{{HomeLink}}">
-                    <img class="home-button navbar-right" src="{{HomeButton}}" />
+                <a href="">
+                    <img class="home-button navbar-right" src="" />
                 </a>
             </div>
         </div>
@@ -41,24 +41,16 @@
                 </ul>
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <h1 class="page-header name-text">{{ProfileName}}</h1>
-                <h2 class="sub-header">{{CategoryData.CategoryDesc}}</h2>
+                <h1 class="page-header name-text"></h1>
+                <h2 class="sub-header"></h2>
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>{{CategoryData.TableHeaderInfo}}</th>
-                                <th>{{CategoryData.TableHeaderData}}</th>
+                                <th></th>
+                                <th></th>
                             </tr>
-                        </thead>                        
-                        <tbody>
-                            {{#each CategoryData.TableBodyRows}}
-                            <tr>
-                                <td>{{Subcategory}}</td>
-                                <td>{{SubcategoryInfo}}</td>
-                            </tr>
-                            {{/each}}
-                        </tbody>
+                        </thead>
                     </table>
                 </div>
             </div>
