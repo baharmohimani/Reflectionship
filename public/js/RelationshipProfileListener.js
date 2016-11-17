@@ -1,6 +1,4 @@
-'use strict';
-
-var datainfo = require("../public/js/examples.js");
+// var datainfo = require("../public/js/examples.js");
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
