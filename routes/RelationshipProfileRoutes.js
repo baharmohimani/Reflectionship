@@ -6,5 +6,5 @@ exports.personal = function (req, res) {
     // First, grab the required data for all Profiles.
     var HomeButton = null;
 
-    res.render("RelationshipProfile");
+    res.json(Profile);
 };
