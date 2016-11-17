@@ -2,7 +2,7 @@
 
 exports.personal = function (req, res) {
     // Required for data.
-    var Profile = require("./public/json/RelationshipProfile.json");
+    /* var Profile = require("./public/json/RelationshipProfile.json");
     
     // First, grab the required data for all Profiles.
     var HomeButton = Profile["HomeButton"];
@@ -17,9 +17,10 @@ exports.personal = function (req, res) {
     var ProfileData = { HomeButton, HomeLink, ProfileUsername, Detail };
 
     // Render the page using the person's information.
-    res.render("RelationshipProfile", ProfileData);
+    res.render("RelationshipProfile", ProfileData); */
+    res.render("RelationshipProfile");
 };
-
+/*
 exports.getDetails = function (req, res) {
     var Profile = require("./public/json/RelationshipProfile.json");
     var ProfileID = Profile["UserID"];
@@ -67,4 +68,4 @@ exports.submitInfo = function (req) {
     }
 
     FileIO.writeFile("./public/json/RelationshipProfile.json", JSON.stringify(Profile), 'utf8');
-}
+} */
