@@ -11,7 +11,7 @@ exports.personal = function (req, res) {
     res.render("RelationshipProfile");
 }
 
-exports.saveInfo = function (req, res) {
+exports.saveInfo = function (req) {
     var ProfileID = parseInt(Profile["UserID"]);
     var ProfileUser = Profile["AllProfiles"][ProfileID];
 

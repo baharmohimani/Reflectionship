@@ -108,7 +108,6 @@ function saveInfo(event) {
     // Finally, save data to JSON file.
     var SaveData = [];
     $(".edit-text").each(function () {
-        console.log("Running!");
         SaveData.push({
             Subcategory: $(this).children(".subcategory").text(),
             SubcategoryInfo: $(this).children(".subcategory-data").text()
