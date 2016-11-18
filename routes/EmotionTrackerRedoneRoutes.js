@@ -17,9 +17,18 @@ exports.getInfo = function (req, res) {
 exports.saveInfo = function (req, res) {
 	var ProfileID = parseInt(ProfileEmotions["UserID"]);
     var ProfileUser = ProfileEmotions["AllProfiles"][ProfileID];
-	var Info = JSON.parse(req.body.jsonStr);
+	if(req.body.jsonStr == "")
+	{
+		ProfileUser["Entries"].shift();
+		
+		FileIO.writeFile("./EmotionTracker.json", JSON.stringify(ProfileEmotions), 'utf8');
+		
+	}
+	else {
+		var Info = JSON.parse(req.body.jsonStr);
 	
-	ProfileUser["Entries"].push(Info);
+		ProfileUser["Entries"].push(Info);
 	
-    FileIO.writeFile("./EmotionTracker.json", JSON.stringify(ProfileEmotions), 'utf8');
+		FileIO.writeFile("./EmotionTracker.json", JSON.stringify(ProfileEmotions), 'utf8');
+	}
 }

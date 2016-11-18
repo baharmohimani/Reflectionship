@@ -11,6 +11,15 @@ $(document).ready(function() {
 function initializePage() {
 	// Setup listeners.
 	$("#record").click(saveEntry);
+	$("#reset").click(removeEntry);
+}
+
+function removeEntry(event) {
+	$("#emotion-list a").first().remove();
+
+	var SaveDataJSON = { jsonStr: "" };
+	$.post("/EmotionTracker/Save", SaveDataJSON);
+	$.get("/EmotionTrackerRedone/Info", processInfo);
 }
 
 function saveEntry(event) {
@@ -69,7 +78,7 @@ function saveEntry(event) {
     var SaveDataJSON = { jsonStr: (JSON.stringify(SaveData)) };
 
     $.post("/EmotionTracker/Save", SaveDataJSON);
-	$.get("/EmotionTrackerRedone/Info", processInfo)
+	$.get("/EmotionTrackerRedone/Info", processInfo);
 }
 
 function processInfo(result) {
