@@ -69,6 +69,7 @@ function saveEntry(event) {
     var SaveDataJSON = { jsonStr: (JSON.stringify(SaveData)) };
 
     $.post("/EmotionTracker/Save", SaveDataJSON);
+	$.get("/EmotionTrackerRedone/Info", processInfo)
 }
 
 function processInfo(result) {
