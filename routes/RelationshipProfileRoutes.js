@@ -4,7 +4,7 @@ var ProfileInfo = require('../RelationshipProfile.json');
 var FileIO = require('fs');
 
 exports.getProfileInfo = function (req, res) {
-    res.json(ProfileInfo["HomeButton"]);
+    res.json(ProfileInfo);
 }
 
 exports.personal = function (req, res) {
