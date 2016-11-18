@@ -40,7 +40,7 @@ if ("development" == app.get("env")) {
 
 // Add routes here
 app.get("/", login.view);
-app.get("/Home", home.view)
+app.get("/Home", home.view);
 
 app.get("/RelationshipProfile/Info", relprofile.getProfileInfo);
 app.get("/RelationshipProfile", relprofile.personal);
