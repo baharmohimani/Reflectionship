@@ -9,4 +9,8 @@ exports.getProfileInfo = function (req, res) {
 
 exports.personal = function (req, res) {
     res.render("RelationshipProfile");
-};
+}
+
+exports.saveInfo = function (req, res) {
+
+}
