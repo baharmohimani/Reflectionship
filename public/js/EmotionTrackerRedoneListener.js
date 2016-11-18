@@ -18,8 +18,9 @@ function removeEntry(event) {
 	$("#emotion-list a").first().remove();
 
 	var SaveDataJSON = { jsonStr: "" };
-	$.post("/EmotionTracker/Save", SaveDataJSON);
-	$.get("/EmotionTrackerRedone/Info", processInfo);
+	$.post("/EmotionTracker/Save", SaveDataJSON, function(data) {
+		$.get("/EmotionTrackerRedone/Info", processInfo);
+	});
 }
 
 function saveEntry(event) {
