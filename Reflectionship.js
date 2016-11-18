@@ -50,6 +50,7 @@ app.get("/EmotionTracker", emotion.view);
 
 app.get("/EmotionTrackerRedone/Info", emotionredone.getInfo);
 app.get("/EmotionTrackerRedone", emotionredone.view);
+app.post("/EmotionTracker/Save", emotionredone.saveInfo);
 
 app.get("/ConversationIdeas", conversation.view);
 app.get("/SwitchProfile", switchusers.view);

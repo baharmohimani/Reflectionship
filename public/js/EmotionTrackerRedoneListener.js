@@ -9,7 +9,66 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
+	// Setup listeners.
+	$("#record").click(saveEntry);
+}
 
+function saveEntry(event) {
+	// Need to figure out which option was selected.
+	var opsel = $(".br-current-rating");
+	var emotion = opsel.text();
+	var date = new Date();
+	var month = ""
+	switch(date.getMonth()){
+		case 0:
+			month = "January";
+			break;
+		case 1:
+			month = "February";
+			break;
+		case 2:
+			month = "March";
+			break;
+		case 3:
+			month = "April";
+			break;
+		case 4:
+			month = "May";
+			break;
+		case 5:
+			month = "June";
+			break;
+		case 6:
+			month = "July";
+			break;
+		case 7:
+			month = "August";
+			break;
+		case 8:
+			month = "September";
+			break;
+		case 9:
+			month = "October";
+			break;
+		case 10:
+			month = "November";
+			break;
+		case 11:
+			month = "December";
+			break;
+	}
+	
+	
+	var currDate = (month) + " " + (date.getDate());
+	
+	var details = $("#comment").val();
+	
+    // Finally, save data to JSON file.
+    var SaveData = {Emotion: emotion, Date: currDate, Details: details};
+	
+    var SaveDataJSON = { jsonStr: (JSON.stringify(SaveData)) };
+
+    $.post("/EmotionTracker/Save", SaveDataJSON);
 }
 
 function processInfo(result) {
@@ -19,7 +78,7 @@ function processInfo(result) {
 
     var EmotionHTML = "";  // Holds all of the HTML code for the emotionlist.
 
-    for (var i = 0; i < User["Entries"].length; i++) {
+    for (var i = User["Entries"].length - 1; i >= 0; i--) {
         var entry = User["Entries"][i];
 		var color = null;
 		switch(entry["Emotion"]) {

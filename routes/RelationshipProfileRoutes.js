@@ -29,5 +29,5 @@ exports.saveInfo = function (req, res) {
             break;
     }
 
-    fs.writeFile("../RelationshipProfile.json", JSON.stringify(Profile), 'utf8');
+    fs.writeFile("./RelationshipProfile.json", JSON.stringify(Profile), 'utf8');
 }
