@@ -113,13 +113,11 @@ function saveInfo(event) {
             Subcategory: $(this).children(".subcategory").text(),
             SubcategoryInfo: $(this).children(".subcategory-data").text()
         });
-        console.log(SaveData);
     });
 
-    // var SaveDataJSON = { detail: DetailID, jsonStr: (JSON.stringify(SaveData)) };
-    console.log(SaveDataJSON);
+    var SaveDataJSON = { detail: DetailID, jsonStr: (JSON.stringify(SaveData)) };
 
-    // $.post("/RelationshipProfile/Save", SaveDataJSON);
+    $.post("/RelationshipProfile/Save", SaveDataJSON);
 }
 
 function deleteInfo(event) {
