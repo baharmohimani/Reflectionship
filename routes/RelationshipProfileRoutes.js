@@ -11,7 +11,7 @@ exports.personal = function (req, res) {
     res.render("RelationshipProfile");
 }
 
-exports.saveInfo = function (req) {
+exports.saveInfo = function (req, res) {
     var ProfileID = parseInt(Profile["UserID"]);
     var ProfileUser = Profile["AllProfiles"][ProfileID];
 
@@ -29,5 +29,5 @@ exports.saveInfo = function (req) {
             break;
     }
 
-    fs.writeFile("./public/json/RelationshipProfile.json", JSON.stringify(Profile), 'utf8');
+    fs.writeFile("../RelationshipProfile.json", JSON.stringify(Profile), 'utf8');
 }
