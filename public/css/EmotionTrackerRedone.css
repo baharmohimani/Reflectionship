@@ -42,6 +42,9 @@ body {
 
 .emotion-list {
 	margin-top: 30px;
+	height: auto;
+	max-height: 275px;
+	overflow-x: hidden;
 }
 
 .status-btn {
