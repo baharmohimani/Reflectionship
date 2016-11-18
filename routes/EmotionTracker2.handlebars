@@ -1,0 +1,68 @@
+﻿    <!DOCTYPE html>
+
+    <html lang="en">
+
+    <head>
+
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Emotion Tracker</title>
+
+      
+      <link href="/css/bootstrap.min.css" rel="stylesheet" />
+      <link href="/css/bootstrap-theme.min.css" rel="stylesheet" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+      <link href="/css/EmotionTracker2.css" rel="stylesheet" />
+    </head>
+    <body class="background">
+
+      <!-- Top bar displaying the profile's picture and name, and the return home button. -->
+      <nav class="home-bar navbar navbar-custom navbar-fixed-top">
+        <a href="{{HomeLink}}">
+          <img class="home navbar-right" src="{{HomeButton}}" />
+        </a>
+      </nav>
+
+    </head>
+    <body>
+
+
+<div id="myProgress">
+  <div id="myBar">
+    <div id="label">10%</div>
+  </div>
+</div>
+
+<br>
+<button onclick="move()">Happy</button>
+<button onclick="move()">Sad</button>
+
+<script>
+function move() {
+  var elem = document.getElementById("myBar");
+  var width = 10;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++;
+      elem.style.width = width + '%';
+      document.getElementById("label").innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
+
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <script src="/js/jquery.barrating.js"></script>
+      <script src="/js/EmotionTrackerListener2.js"></script>
+
+    </body>
+    </html>
