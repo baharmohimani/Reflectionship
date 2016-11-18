@@ -41,7 +41,7 @@ if ("development" == app.get("env")) {
 app.get("/", login.view);
 app.get("/Home", home.view)
 
-app.get("/RelationshipProfileInfo", relprofile.getProfileInfo);
+app.get("/RelationshipProfile/Info", relprofile.getProfileInfo);
 app.get("/RelationshipProfile", relprofile.personal);
 
 app.get("/EmotionTracker", emotion.view);
