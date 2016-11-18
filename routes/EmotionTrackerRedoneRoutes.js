@@ -19,7 +19,7 @@ exports.saveInfo = function (req, res) {
     var ProfileUser = ProfileEmotions["AllProfiles"][ProfileID];
 	if(req.body.jsonStr == "")
 	{
-		ProfileUser["Entries"].shift();
+		ProfileUser["Entries"].pop();
 		
 		FileIO.writeFile("./EmotionTracker.json", JSON.stringify(ProfileEmotions), 'utf8');
 		
