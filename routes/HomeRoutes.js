@@ -10,7 +10,7 @@ exports.view = function (req, res) {
                         "ImageHolder": "images/ImageHolder.png",
                         "Image": "images/Emotion.png",
                         "ImageText": "images/EmotionTrackerText.png",
-                        "AspectLink": "/EmotionTracker",
+                        "AspectLink": "/EmotionTrackerRedone",
                         "ImageClass": "top-image",
                         "HolderClass": "top-holder"
                     },
@@ -31,7 +31,7 @@ exports.view = function (req, res) {
                         "ImageHolder": "images/ImageHolder.png",
                         "Image": "images/Relationship.png",
                         "ImageText": "images/RelationshipProfileText.png",
-                        "AspectLink": "/RelationshipProfile/Personal",
+                        "AspectLink": "/RelationshipProfile/",
                         "ImageClass": "bottom-image",
                         "HolderClass": "bottom-holder"
                     },
