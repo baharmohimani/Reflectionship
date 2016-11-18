@@ -46,8 +46,8 @@ app.get("/RelationshipProfile/Info", relprofile.getProfileInfo);
 app.get("/RelationshipProfile", relprofile.personal);
 app.post("/RelationshipProfile/Save", relprofile.submitInfo);
 
-app.get("/EmotionTracker2", emotion2.view);
-app.get("/EmotionTracker", emotion.view);
+// app.get("/EmotionTracker2", emotion2.view);
+// app.get("/EmotionTracker", emotion.view);
 app.get("/ConversationIdeas", conversation.view);
 app.get("/SwitchProfile", switchusers.view);
 
