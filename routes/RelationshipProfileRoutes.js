@@ -11,6 +11,7 @@ exports.personal = function (req, res) {
     res.render("RelationshipProfile");
 };
 
+/*
 exports.submitInfo = function (req) {
 
     var ProfileID = Profile["UserID"];
@@ -31,4 +32,5 @@ exports.submitInfo = function (req) {
     }
 
     FileIO.writeFile("../RelationshipProfile.json", JSON.stringify(Profile), 'utf8');
-}
+} 
+*/

@@ -44,7 +44,7 @@ app.get("/Home", home.view)
 
 app.get("/RelationshipProfile/Info", relprofile.getProfileInfo);
 app.get("/RelationshipProfile", relprofile.personal);
-app.post("/RelationshipProfile/Save", relprofile.submitInfo);
+// app.post("/RelationshipProfile/Save", relprofile.submitInfo);
 
 // app.get("/EmotionTracker2", emotion2.view);
 app.get("/EmotionTracker", emotion.view);
