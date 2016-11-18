@@ -147,6 +147,9 @@ function endSwitch(result) {
     var UserID = parseInt(result["UserID"]);
     var User = result["AllProfiles"][UserID];
     $("#profile-title").text(User["Name"] + "'s " + User[DetailID]["CategoryDesc"]);
+    $("#info").text(User["Name"] + "'s Info");
+    $("#likes").text(User["Name"] + "'s Likes");
+    $("#dislikes").text(User["Name"] + "'s Dislikes");
 
     var BodyHTML = "";  // Holds all of the HTML code for the table body.
 
