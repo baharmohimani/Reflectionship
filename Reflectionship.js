@@ -14,7 +14,6 @@ var conversation = require("./routes/ConversationIdeasRoutes");
 var relprofile = require("./routes/RelationshipProfileRoutes");
 var switchusers = require("./routes/SwitchProfileRoutes");
 var login = require("./routes/LoginRoutes");
-var info = require("./routes/Information");
 
 var app = express();
 
@@ -41,11 +40,13 @@ if ("development" == app.get("env")) {
 // Add routes here
 app.get("/", login.view);
 app.get("/Home", home.view)
+
+app.get("/RelationshipProfileInfo", relprofile.getProfileInfo);
 app.get("/RelationshipProfile", relprofile.personal);
+
 app.get("/EmotionTracker", emotion.view);
 app.get("/ConversationIdeas", conversation.view);
 app.get("/SwitchProfile", switchusers.view);
-app.get("/Info", info.getProfileInfo);
 
 http.createServer(app).listen(app.get("port"), function () {
     console.log("Express server listening on port " + app.get("port"));
