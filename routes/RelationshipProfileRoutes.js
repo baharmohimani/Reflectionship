@@ -4,6 +4,8 @@ var ProfileInfo = require('../RelationshipProfile.json');
 var FileIO = require('fs');
 
 exports.getProfileInfo = function (req, res) {
+    console.log("Hello");
+    console.log(ProfileInfo);
     res.json(ProfileInfo);
 }
 
