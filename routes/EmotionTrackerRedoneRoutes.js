@@ -1,3 +1,6 @@
+var ProfileEmotions = require('../EmotionTracker.json');
+var FileIO = require('fs');
+
 exports.view = function (req, res) {
     var EmotionInfo = {
         "HomeButton": "../images/HomeSymbol.png",
@@ -8,5 +11,5 @@ exports.view = function (req, res) {
 };
 
 exports.getInfo = function (req, res) {
-	
+	res.json(ProfileEmotions);
 }

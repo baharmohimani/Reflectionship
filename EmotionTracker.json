@@ -1,0 +1,30 @@
+{
+	"UserID": 0,
+	"AllProfiles": [
+		{
+			"Name": "Obama",
+			"Entries": [
+				{
+					"Emotion": "Happy",
+					"Date": "November 17th",
+					"Details": "Obama brought me to a golf course in La Jolla!"
+				},
+				{
+					"Emotion": "Content",
+					"Date": "November 14th",
+					"Details": "Obama was as good as usual - nothing special to note today."
+				},
+				{
+					"Emotion": "Discontent",
+					"Date": "November 1st",
+					"Details": "Obama may want to fire me later from my performance."
+				},
+				{
+					"Emotion": "Unhappy",
+					"Date": "September 21st",
+					"Details": "Obama almost accidentally fired me from his cabinet. Really stressful."
+				}
+			]
+		}
+	]
+}
