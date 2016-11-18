@@ -10,7 +10,7 @@ var handlebars = require("express3-handlebars")
 // Load all controllers in these js files. 
 var home = require("./routes/HomeRoutes");
 var emotion = require("./routes/EmotionTrackerRoutes");
-var emotion = require("./routes/EmotionTrackerRoutes2");
+var emotionredone = require("./routes/EmotionTrackerRedoneRoutes");
 var conversation = require("./routes/ConversationIdeasRoutes");
 var relprofile = require("./routes/RelationshipProfileRoutes");
 var switchusers = require("./routes/SwitchProfileRoutes");
@@ -35,36 +35,25 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // development only
 if ("development" == app.get("env")) {
-    app.use(express.errorHandler());
+  app.use(express.errorHandler());
 }
-
-app.post('/getQuestion', function (req, res) {
-    var qArr = ["Which parent do you identify with most? ", "What is your biggest pet peeve? ",
-     "If you could fix one world problem, what would it be?", "If you only had three wishes, what would they be? ",
-     "What is your favorite thing about yourself?", "What is something you regret doing? ", "If you could have any job in the world, what would it be?",
-     "When was the last time you cried? "];
-
-    //Get random index from qArr    
-    var qArrLen = qArr.length;
-    var ranNum = Math.floor(Math.random() * (qArrLen - 1)) + 0;
-
-    res.send(qArr[ranNum]);
-});
 
 // Add routes here
 app.get("/", login.view);
-app.get("/Home", home.view);
+app.get("/Home", home.view)
 
-app.get("/RelationshipProfile/", relprofile.profileInfo);
-app.get("/RelationshipProfile/:DetailID", relprofile.getDetails);
-app.post("/RelationshipProfile/Save", relprofile.submitInfo);
+app.get("/RelationshipProfile/Info", relprofile.getProfileInfo);
+app.get("/RelationshipProfile", relprofile.personal);
+app.post("/RelationshipProfile/Save", relprofile.saveInfo);
+
 app.get("/EmotionTracker", emotion.view);
-app.get("/EmotionTracker2", emotion2.view);
-// app.get("/EmotionTracker", emotion.view);
-app.get("/ConversationIdeas", conversation.view);
 
+app.get("/EmotionTrackerRedone/Info", emotionredone.getInfo);
+app.get("/EmotionTrackerRedone", emotionredone.view);
+app.post("/EmotionTracker/Save", emotionredone.saveInfo);
+
+app.get("/ConversationIdeas", conversation.view);
 app.get("/SwitchProfile", switchusers.view);
-app.post("/SwitchProfile/Save", switchusers.switch);
 
 http.createServer(app).listen(app.get("port"), function () {
     console.log("Express server listening on port " + app.get("port"));

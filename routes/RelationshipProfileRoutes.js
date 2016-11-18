@@ -1,53 +1,18 @@
-/* Loads the relationship Profile page. */
+/* Loads the relationship profile page. */
 
-var Profile = require("../public/json/RelationshipProfile.json");
-var fs = require('fs');
+var ProfileInfo = require('../RelationshipProfile.json');
+var FileIO = require('fs');
 
-exports.profileInfo = function (req, res) {
-    // First, grab the required data for all Profiles.
-    var HomeButton = Profile["HomeButton"];
-    var HomeLink = Profile["HomeLink"];
-
-    // Then, grab the specific Profile.
-    var ProfileID = Profile["UserID"];
-    var ProfileUsername = Profile["AllProfiles"][ProfileID]["Name"];
-    var Detail = Profile["AllProfiles"][ProfileID]["Info"];
-
-    // Combine the data together.
-    var ProfileData = { HomeButton, HomeLink, ProfileUsername, Detail };
-
-    // Render the page using the person's information.
-    res.render("RelationshipProfile", ProfileData);
+exports.getProfileInfo = function (req, res) {
+    res.json(ProfileInfo);
 }
 
-exports.getDetails = function (req, res) {
-    var ProfileID = Profile["UserID"];
-    var Detail = null;
-    switch (req.params.DetailID) {
-        case "0":
-            Detail = Profile["AllProfiles"][ProfileID]["Info"];
-            break;
-        case "1":
-            Detail = Profile["AllProfiles"][ProfileID]["Likes"];
-            break;
-        case "2":
-            Detail = Profile["AllProfiles"][ProfileID]["Dislikes"];
-            break;
-        default:
-            break;
-    }
-
-    var ProfileUsername = Profile["AllProfiles"][ProfileID]["Name"];
-
-    var ProfileData = { ProfileUsername, Detail };
-
-    // Send JSON along.
-    res.json(ProfileData);
+exports.personal = function (req, res) {
+    res.render("RelationshipProfile");
 }
 
-exports.submitInfo = function (req) {
-
-    var ProfileID = Profile["UserID"];
+exports.saveInfo = function (req, res) {
+    var ProfileID = parseInt(Profile["UserID"]);
     var ProfileUser = Profile["AllProfiles"][ProfileID];
 
     switch (req.body.detail) {
@@ -64,5 +29,5 @@ exports.submitInfo = function (req) {
             break;
     }
 
-    fs.writeFile("./public/json/RelationshipProfile.json", JSON.stringify(Profile), 'utf8');
+    fs.writeFile("./RelationshipProfile.json", JSON.stringify(Profile), 'utf8');
 }

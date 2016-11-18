@@ -1,10 +1,10 @@
-var DetailID = 0;
+var DetailID = "Info";
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function () {
     // Set default appearance.
     $("#save-button").hide();
-
+    $.get("/RelationshipProfile/Info", endSwitch);
     initializePage();
 })
 
@@ -108,16 +108,13 @@ function saveInfo(event) {
     // Finally, save data to JSON file.
     var SaveData = [];
     $(".edit-text").each(function () {
-        console.log("Running!");
         SaveData.push({
             Subcategory: $(this).children(".subcategory").text(),
             SubcategoryInfo: $(this).children(".subcategory-data").text()
         });
-        console.log(SaveData);
     });
 
     var SaveDataJSON = { detail: DetailID, jsonStr: (JSON.stringify(SaveData)) };
-    console.log(SaveDataJSON);
 
     $.post("/RelationshipProfile/Save", SaveDataJSON);
 }
@@ -129,28 +126,32 @@ function deleteInfo(event) {
 }
 
 function switchInfo(event) {
-    $.get("/RelationshipProfile/0", endSwitch);
-    DetailID = 0;
+    DetailID = "Info";
+    $.get("/RelationshipProfile/Info", endSwitch);
 }
 
 function switchLikes(event) {
-    $.get("/RelationshipProfile/1", endSwitch);
-    DetailID = 1;
+    DetailID = "Likes";
+    $.get("/RelationshipProfile/Info", endSwitch);
 }
 
 function switchDislikes(event) {
-    $.get("/RelationshipProfile/2", endSwitch);
-    DetailID = 2;
+    DetailID = "Dislikes";
+    $.get("/RelationshipProfile/Info", endSwitch);
 }
 
 function endSwitch(result) {
-    $("#profile-title").text(result["ProfileUsername"] + "'s " + result["Detail"]["CategoryDesc"]);
-    console.log(result["Detail"]["TableBodyRows"].length);
+    var UserID = parseInt(result["UserID"]);
+    var User = result["AllProfiles"][UserID];
+    $("#profile-title").text(User["Name"] + "'s " + User[DetailID]["CategoryDesc"]);
+    $("#info").text(User["Name"] + "'s Info");
+    $("#likes").text(User["Name"] + "'s Likes");
+    $("#dislikes").text(User["Name"] + "'s Dislikes");
 
     var BodyHTML = "";  // Holds all of the HTML code for the table body.
 
-    for (var i = 0; i < result["Detail"]["TableBodyRows"].length; i++) {
-        var item = result["Detail"]["TableBodyRows"][i];
+    for (var i = 0; i < User[DetailID]["TableBodyRows"].length; i++) {
+        var item = User[DetailID]["TableBodyRows"][i];
         BodyHTML = BodyHTML + "<tr class='edit-text'>" +
             "<td class='subcategory'>" + item.Subcategory + "</td>" +
              "<td class='subcategory'>" + item.SubcategoryInfo + "</td>" +
