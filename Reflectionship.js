@@ -10,6 +10,7 @@ var handlebars = require("express3-handlebars")
 // Load all controllers in these js files. 
 var home = require("./routes/HomeRoutes");
 var emotion = require("./routes/EmotionTrackerRoutes");
+var emotionredone = require("./routes/EmotionTrackerRedoneRoutes");
 var conversation = require("./routes/ConversationIdeasRoutes");
 var relprofile = require("./routes/RelationshipProfileRoutes");
 var switchusers = require("./routes/SwitchProfileRoutes");
@@ -46,6 +47,8 @@ app.get("/RelationshipProfile", relprofile.personal);
 app.post("/RelationshipProfile/Save", relprofile.saveInfo);
 
 app.get("/EmotionTracker", emotion.view);
+app.get("/EmotionTrackerRedone", emotionredone.view);
+
 app.get("/ConversationIdeas", conversation.view);
 app.get("/SwitchProfile", switchusers.view);
 

@@ -9,9 +9,21 @@
     margin-right: auto;
 }
 
+body {
+	background-color: #c6e1ff;
+}
+
 .home-bar {
     border-bottom-width: 5px;
     border-bottom-color: #7ce1ff;
+}
+
+.box-header {
+	text-align: center;
+}
+
+.box-body {
+	margin-left: 50px;
 }
 
 #top-window {
@@ -20,31 +32,27 @@
     width: 100%;
 }
 
+.detail-box {
+	margin-top: 30px;
+}
+
+.tracker-bar {
+	margin-top: 35px;
+}
+
+.emotion-list {
+	margin-top: 30px;
+}
+
 .status-btn {
-    margin-left: 100px;
-    margin-right: 100px;
-    padding-top: 50px;
-    padding-bottom: 330px;
+    text-align: center;
+    padding-top: 5px;
+	padding-bottom: 25px;
 }
 
-.background {
-    position: relative;
-    padding-top: 200px;
+.status-btn div {
+	margin-top: 20px;
 }
-
-    .background:after {
-        content: "";
-        background: url("../images/BackgroundImage.png") no-repeat;
-        background-size: cover;
-        opacity: 0.85;
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-
 
 .navbar-custom {
     background-color: #4fb8ea;
