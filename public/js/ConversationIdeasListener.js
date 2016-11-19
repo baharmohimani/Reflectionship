@@ -8,10 +8,15 @@ $(document).ready(function() {
 /*
  * Function that is called when the document is ready.
  */
-function initializePage() {
+ function initializePage() {
 
-}
 
-function question() {
-	prompt( Which parent do you identify with most? );
+   $("#another-btn").on('click', function(){
+     $.post('/getQuestion', null, function(res){
+         console.log(res); 
+         $("#fname").val(res); 
+
+     });
+
+ }); 
 }

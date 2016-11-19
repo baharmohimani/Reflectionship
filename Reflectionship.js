@@ -38,6 +38,17 @@ if ("development" == app.get("env")) {
   app.use(express.errorHandler());
 }
 
+app.post('/getQuestion', function(req, res){
+var qArr = ["Which parent do you identify with most? ", "What is your biggest pet peeve? ",
+"If you could fix one world problem, what would it be?", "If you only had three wishes, what would they be? ", 
+"What is your favorite thing about yourself?", "What is something you regret doing? ", "If you could have any job in the world, what would it be?",
+"When was the last time you cried? "];
+var ranNum = Math.floor(Math.random()* (qArrLen - 1)) + 0;  
+res.send(qArr[ranNum]); 
+});
+
+  
+      
 // Add routes here
 app.get("/", login.view);
 app.get("/Home", home.view)
