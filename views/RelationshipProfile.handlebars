@@ -16,8 +16,8 @@
 <body>
     <!-- Top bar displaying the profile's picture and name, and the return home button. -->
     <nav class="home-bar navbar navbar-custom navbar-fixed-top">
-        <a href="/Home">
-            <img class="home navbar-right" src="images/HomeSymbol.png" />
+        <a href="{{HomeLink}}">
+            <img class="home navbar-right" src="{{HomeButton}}" />
         </a>
     </nav>
 
@@ -84,7 +84,8 @@
   ga('create', 'UA-87455402-2', 'auto');
   ga('send', 'pageview');
   ga('send','event','HomeButton','click');
-  <!-- jQuery and Javascript script files below. -->
+  // jQuery and Javascript script files below.
+  </script>
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/RelationshipProfileListener.js"></script>
