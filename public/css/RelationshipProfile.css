@@ -71,6 +71,8 @@
         transition: all 0.4s ease 0s;
     }
 
+
+
 .sidebar-nav {
     position: absolute;
     left: 0px;
@@ -143,6 +145,7 @@
             opacity: 0;
         }
 
+
 .navbar-custom {
     background-color: #4fb8ea;
     border-radius: 0;
@@ -202,6 +205,22 @@ body {
         color: #fff;
         background-color: #428bca;
     }
+.home-button {
+    position: relative;
+    width: 2%;
+    height: 2%;
+}
+.image-overlay {
+    width: 100%;
+    position: relative;
+}
+.navbar-fixed-top {
+    border: 0;
+}
+.home-img {
+    width: 3%;
+    height: 3%;
+}
 
 .name-text {
     text-align: center;
