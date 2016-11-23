@@ -13,6 +13,14 @@ exports.view = function (req, res) {
 exports.getInfo = function (req, res) {
 	res.json(ProfileEmotions);
 }
+/*
+ * GET home page.
+ */
+function keysrt(key, desc) {
+    return function (a, b) {
+        return desc ? ~~(a[key] < b[key]) : ~~(a[key] > b[key]);
+    }
+}
 
 exports.saveInfo = function (req, res) {
 	var ProfileID = parseInt(ProfileEmotions["UserID"]);
@@ -28,6 +36,7 @@ exports.saveInfo = function (req, res) {
 		var Info = JSON.parse(req.body.jsonStr);
 	
 		ProfileUser["Entries"].push(Info);
+        ProfileUser["Entries"].sort(keysrt('properDate', false));
 	
 		FileIO.writeFile("./EmotionTracker.json", JSON.stringify(ProfileEmotions), 'utf8');
 	}

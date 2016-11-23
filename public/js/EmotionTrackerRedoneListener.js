@@ -72,14 +72,35 @@ function saveEntry(event) {
 	var currDate = (month) + " " + (date.getDate());
 	
 	var details = $("#comment").val();
+
+	var properDate = "2016" + "-" + date.getMonth() + "-" + date.getDate();
+	//console.log(date.getYear());
+	//console.log(date.getMonth());
+	//console.log(date.getDate());
+	console.log(properDate);
+
 	
     // Finally, save data to JSON file.
-    var SaveData = {Emotion: emotion, Date: currDate, Details: details};
+    var SaveData = 
+    {
+    	Emotion: emotion,
+    	Date: currDate,
+    	Details: details,
+    	properDate: properDate
+	};
 	
     var SaveDataJSON = { jsonStr: (JSON.stringify(SaveData)) };
 
     $.post("/EmotionTracker/Save", SaveDataJSON);
 	$.get("/EmotionTrackerRedone/Info", processInfo);
+}
+/*
+ * GET home page.
+ */
+function keysrt(key, desc) {
+    return function (a, b) {
+        return desc ? ~~(a[key] < b[key]) : ~~(a[key] > b[key]);
+    }
 }
 
 function processInfo(result) {
@@ -89,7 +110,10 @@ function processInfo(result) {
 
     var EmotionHTML = "";  // Holds all of the HTML code for the emotionlist.
 
-    for (var i = User["Entries"].length - 1; i >= 0; i--) {
+    //console.log(User["Entries"]);
+    User["Entries"].sort(keysrt('properDate', false));
+    //console.log(User["Entries"]);
+    for (var i = 0; i < User["Entries"].length; i++) {
         var entry = User["Entries"][i];
 		var color = null;
 		switch(entry["Emotion"]) {
