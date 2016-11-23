@@ -6,27 +6,23 @@
       "Entries": [
         {
           "Emotion": "Happy",
-          "Date": "November 22nd",
-          "Details": "Obama brought me to a golf course in La Jolla!",
-          "properDate": "2016-10-22"
-        },
-        {
-          "Emotion": "Content",
-          "Date": "November 5th",
-          "Details": "Obama was as good as usual - nothing special to note today.",
-          "properDate": "2016-10-05"
+          "Date": "September 22nd",
+          "Details": "Obama brought me to a golf course in La Jolla!"
         },
         {
           "Emotion": "Discontent",
           "Date": "November 2nd",
-          "Details": "Obama may want to fire me later from my performance.",
-          "properDate": "2016-10-02"
+          "Details": "Obama may want to fire me later from my performance."
+        },        
+        {
+          "Emotion": "Content",
+          "Date": "November 5th",
+          "Details": "Obama was as good as usual - nothing special to note today."
         },
         {
           "Emotion": "Unhappy",
           "Date": "November 10th",
-          "Details": "Obama almost accidentally fired me from his cabinet. Really stressful.",
-          "properDate": "2016-10-10"
+          "Details": "Obama almost accidentally fired me from his cabinet. Really stressful."
         }
       ]
     }

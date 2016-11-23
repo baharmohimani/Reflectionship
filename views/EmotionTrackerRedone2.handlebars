@@ -35,7 +35,7 @@
     <link href="/css/bars-movie.css" rel="stylesheet" />
 
     <!-- Other CSS files go here. -->
-    <link href="/css/EmotionTrackerRedone.css" rel="stylesheet" />
+    <link href="/css/EmotionTrackerRedone2.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -45,9 +45,30 @@
             <img class="home navbar-right" src="images/HomeSymbol.png" />
         </a>
     </nav>
+    <div id="navigation">
+        <ul class="tab">
+            <li><a href="javascript:void(0)" id="to-record" class="tablinks">Record</a></li>
+            <li><a href="javascript:void(0)" id="to-log" class="tablinks">Log</a></li>
+        </ul>
+    </div>
     <div id="emotion-list" class="list-group">
     </div>
-    <div class="container tracker-bar">
+    <div id="emotion-list-blocker">
+    </div>
+    <div class="container">
+        <div class="row">            
+            <div id="delete-btn" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <button id="reset" type="button" class="btn btn-primary" onclick= 
+                "ga('send','event','reset','click')">Delete</button>
+            </div>
+        </div>
+    </div>
+    <div id="emotion-bar" class="container tracker-bar">
+        <div class="row">         
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <i id="question" class="fa fa-question-circle fa-stack-2x"></i>
+            </div>
+        </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="box box-blue box-example-movie">
@@ -61,7 +82,7 @@
                         </select>
                     </div>
                 </div>
-            </div>
+            </div>           
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="form-group detail-box">
                     <label for="comment">Event Log Entry:</label>
@@ -70,13 +91,9 @@
             </div>
         </div>
         <div class="row status-btn">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div id="add-btn" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <button id="record" type="button" class="btn btn-info" onclick= "
                 ga('send','event','record','click')">Add</button>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <button id="reset" type="button" class="btn btn-primary" onclick= 
-                "ga('send','event','reset','click')">Delete</button>
             </div>
         </div>
     </div>
