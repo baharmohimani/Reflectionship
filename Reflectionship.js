@@ -9,7 +9,7 @@ var handlebars = require("express3-handlebars")
 
 // Load all controllers in these js files. 
 var home = require("./routes/HomeRoutes");
-var emotion = require("./routes/EmotionTrackerRoutes");
+var emotionredone2 = require("./routes/EmotionTrackerRedoneRoutes2");
 var emotionredone = require("./routes/EmotionTrackerRedoneRoutes");
 var conversation = require("./routes/ConversationIdeasRoutes");
 var relprofile = require("./routes/RelationshipProfileRoutes");
@@ -57,14 +57,20 @@ app.get("/RelationshipProfile/Info", relprofile.getProfileInfo);
 app.get("/RelationshipProfile", relprofile.personal);
 app.post("/RelationshipProfile/Save", relprofile.saveInfo);
 
-app.get("/EmotionTracker", emotion.view);
+
 
 app.get("/EmotionTrackerRedone/Info", emotionredone.getInfo);
 app.get("/EmotionTrackerRedone", emotionredone.view);
 app.post("/EmotionTracker/Save", emotionredone.saveInfo);
 
+app.get("/EmotionTrackerRedone2/Info", emotionredone2.getInfo);
+app.get("/EmotionTrackerRedone2", emotionredone2.view);
+app.post("/EmotionTracker2/Save", emotionredone2.saveInfo);
+
+
 app.get("/ConversationIdeas", conversation.view);
 app.get("/SwitchProfile", switchusers.view);
+
 
 http.createServer(app).listen(app.get("port"), function () {
     console.log("Express server listening on port " + app.get("port"));
