@@ -74,7 +74,7 @@
                 <button id="record" type="button" class="btn btn-info" onclick= "ga('send','event','record','click')">Record</button>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <button id="reset" type="button" class="btn btn-primary">Reset</button>
+                <button id="reset" type="button" class="btn btn-primary" onclick= "ga('send','event','reset','click')">Reset</button>
             </div>
         </div>
     </div>
@@ -87,10 +87,6 @@
 
   ga('create', 'UA-87455402-3', 'auto');
   ga('send', 'pageview');
-  ga('send','event','HomeButton','click');
-  ga('send','event','UserID','click');
-  
-  ga('send','event','reset','click');
  
 
 </script>
