@@ -113,9 +113,19 @@ function saveEntry(event) {
     
     var SaveDataJSON = { jsonStr: (JSON.stringify(SaveData)) };
     
-    $.post("/EmotionTracker/Save", SaveDataJSON, function(data) {
-        $.get("/EmotionTrackerRedone/Info", processInfo);
-    });
+    $.post("/EmotionTracker/Save", SaveDataJSON);
+   $.get("/EmotionTrackerRedone2/Info", processInfo);
+ }
+ /*
+ - * GET home page.
+ - */
+ function keysrt(key, desc) {
+     return function (a, b) {
+         return desc ? ~~(a[key] < b[key]) : ~~(a[key] > b[key]);
+   }
+    // $.post("/EmotionTracker/Save", SaveDataJSON, function(data) {
+        // $.get("/EmotionTrackerRedone/Info", processInfo);
+    // });
 }
 
 function processInfo(result) {
@@ -126,6 +136,9 @@ function processInfo(result) {
     console.log("Hello");
     var EmotionHTML = "";  // Holds all of the HTML code for the emotionlist.
 
+    //console.log(User["Entries"]);
+     User["Entries"].sort(keysrt('properDate', false));
+    //console.log(User["Entries"]);
     for (var i = 0; i < User["Entries"].length; i++) {
         var entry = User["Entries"][i];
         var color = null;
