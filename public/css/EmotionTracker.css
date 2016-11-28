@@ -1,5 +1,26 @@
 #navigation {
-    padding-top: 50px;
+    padding: 5px;
+}
+
+    #navigation ul li a {
+        text-align: center;
+        width: 182px;
+    }
+
+#to-record {
+    width: 182px;
+}
+
+#to-record-li {
+    width: 182px;
+}
+
+#to-log {
+    width: 181px;
+}
+
+#to-log-li {
+    width: 181px;
 }
 
 #emotion-list {
@@ -14,7 +35,19 @@
 #emotion-bar {
     z-index: 1;
     position: relative;
-    margin-top: 100px;
+    margin-top: 75px;
+}
+
+#name-text {
+    font-size: 25px;
+    color: #808080;
+    margin-top: -60px;
+}
+
+#tracker-text {
+    font-size: 30px;
+    color: black;
+    padding-top: 20px;
 }
 
 #emotion-list-blocker {
@@ -38,8 +71,9 @@
 }
 
 #question {
-    margin-left: 180px;
-    margin-top: -90px;
+    margin-left: 160px;
+    margin-top: -35px;
+    margin-bottom: -80px;
 }
 
 ul.tab {
@@ -51,28 +85,34 @@ ul.tab {
     background-color: #4fb8ea;
 }
 
-ul.tab li {float: left;}
+    ul.tab li {
+        float: left;
+    }
 
-ul.tab li a {
-    display: inline-block;
-    color: #ffffff;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 17px;
-}
+        ul.tab li a {
+            display: inline-block;
+            color: #ffffff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 17px;
+        }
 
-/* Change background color of links on hover */
-ul.tab li a:hover {background-color: #ddd;}
+            /* Change background color of links on hover */
+            ul.tab li a:hover {
+                background-color: #ddd;
+            }
 
-/* Create an active/current tablink class */
-ul.tab li a:focus, .active {background-color: #c6e1ff;}
+            /* Create an active/current tablink class */
+            ul.tab li a:focus, .active {
+                background-color: #c6e1ff;
+            }
 
 .home {
     position: relative;
     display: block;
-    width: 13%;
+    width: 8%;
     height: auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -81,7 +121,7 @@ ul.tab li a:focus, .active {background-color: #c6e1ff;}
 }
 
 body {
-	background-color: #c6e1ff;
+    background-color: #c6e1ff;
 }
 
 .home-bar {
@@ -90,11 +130,11 @@ body {
 }
 
 .box-header {
-	text-align: center;
+    text-align: center;
 }
 
 .box-body {
-	margin-left: 50px;
+    margin-left: 50px;
 }
 
 #top-window {
@@ -104,29 +144,29 @@ body {
 }
 
 .detail-box {
-	margin-top: 30px;
+    margin-top: 30px;
 }
 
 .tracker-bar {
-	margin-top: 35px;
+    margin-top: 35px;
 }
 
 #emotion-list {
-	height: auto;
-	max-height: 300px;
-	overflow-x: hidden;
+    height: auto;
+    max-height: 300px;
+    overflow-x: hidden;
     overflow-y: scroll;
 }
 
 .status-btn {
     text-align: center;
     padding-top: 5px;
-	padding-bottom: 25px;
+    padding-bottom: 25px;
 }
 
-.status-btn div {
-	margin-top: 20px;
-}
+    .status-btn div {
+        margin-top: 20px;
+    }
 
 .navbar-custom {
     background-color: #4fb8ea;

@@ -63,7 +63,19 @@
             "SubcategoryInfo": "Oppression"
           }
         ]
-      }
+      },
+      "Entries": [
+        {
+          "Emotion": "Discontent",
+          "Date": "November 23",
+          "Details": "Testing A."
+        },
+        {
+          "Emotion": "Discontent",
+          "Date": "November 23",
+          "Details": "Testing B."
+        }
+      ]
     },
     {
       "Name": "Obama Mach II",
@@ -127,7 +139,19 @@
             "SubcategoryInfo": "Oppression"
           }
         ]
-      }
+      },
+      "Entries": [
+        {
+          "Emotion": "Discontent",
+          "Date": "November 23",
+          "Details": "Testing C."
+        },
+        {
+          "Emotion": "Discontent",
+          "Date": "November 23",
+          "Details": "Testing D."
+        }
+      ]
     }
   ]
 }

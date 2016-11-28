@@ -1,6 +1,6 @@
 /* Loads the relationship profile page. */
 
-var ProfileInfo = require('../RelationshipProfile.json');
+var ProfileInfo = require('../ProfileInfo.json');
 var FileIO = require('fs');
 
 exports.getProfileInfo = function (req, res) {
@@ -29,5 +29,5 @@ exports.saveInfo = function (req, res) {
             break;
     }
 
-    fs.writeFile("./RelationshipProfile.json", JSON.stringify(Profile), 'utf8');
+    fs.writeFile("./ProfileInfo.json", JSON.stringify(Profile), 'utf8');
 }

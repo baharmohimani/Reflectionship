@@ -1,4 +1,4 @@
-var ProfileEmotions = require('../EmotionTracker.json');
+var ProfileEmotions = require('../ProfileInfo.json');
 var FileIO = require('fs');
 
 exports.view = function (req, res) {
@@ -7,19 +7,11 @@ exports.view = function (req, res) {
         "HomeLink": "/Home"
     };
 
-    res.render("EmotionTrackerRedone2", EmotionInfo);
+    res.render("EmotionTracker", EmotionInfo);
 };
 
 exports.getInfo = function (req, res) {
 	res.json(ProfileEmotions);
-}
-/*
- * GET home page.
- */
-function keysrt(key, desc) {
-    return function (a, b) {
-        return desc ? ~~(a[key] < b[key]) : ~~(a[key] > b[key]);
-    }
 }
 
 exports.saveInfo = function (req, res) {
@@ -27,17 +19,18 @@ exports.saveInfo = function (req, res) {
     var ProfileUser = ProfileEmotions["AllProfiles"][ProfileID];
 	if(req.body.jsonStr == "")
 	{
-		ProfileUser["Entries"].pop();
+	    if (Object.keys(ProfileUser["Entries"]).length > 0) {
+	        ProfileUser["Entries"].pop();
+	    }
 		
-		FileIO.writeFile("./EmotionTracker.json", JSON.stringify(ProfileEmotions), 'utf8');
+		FileIO.writeFile("./ProfileInfo.json", JSON.stringify(ProfileEmotions), 'utf8');
 		
 	}
 	else {
 		var Info = JSON.parse(req.body.jsonStr);
 	
 		ProfileUser["Entries"].push(Info);
-        ProfileUser["Entries"].sort(keysrt('properDate', false));
 	
-		FileIO.writeFile("./EmotionTracker.json", JSON.stringify(ProfileEmotions), 'utf8');
+		FileIO.writeFile("./ProfileInfo.json", JSON.stringify(ProfileEmotions), 'utf8');
 	}
 }

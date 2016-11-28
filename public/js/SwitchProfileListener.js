@@ -1,5 +1,3 @@
-'use strict';
-
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
@@ -14,4 +12,5 @@ function initializePage() {
 }
 function switchUsers(event) {
     alert('your profile is switched now!');
-     $.post("/SwitchProfile/Save", { UserID: this.value });
+    $.post("/SwitchProfile/Save", { UserID: this.value });
+}

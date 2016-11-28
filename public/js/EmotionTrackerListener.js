@@ -5,7 +5,7 @@ $(document).ready(function() {
     $("#emotion-list").hide();
     $("#delete-btn").hide();
     $("#emotion-list-blocker").hide();
-	$.get("/EmotionTrackerRedone2/Info", processInfo)
+	$.get("/EmotionTracker/Info", processInfo)
 })
 
 /*
@@ -22,7 +22,6 @@ function initializePage() {
 
 function showHelp() {
     window.alert("This is a log to track your emotions throughout your relationship with the currently selected person.");
-    console.log("HOY");
 }
 
 function toRecord() {
@@ -49,7 +48,7 @@ function removeEntry(event) {
 
 	var SaveDataJSON = { jsonStr: "" };
 	$.post("/EmotionTracker/Save", SaveDataJSON, function(data) {
-		$.get("/EmotionTrackerRedone2/Info", processInfo);
+		$.get("/EmotionTracker/Info", processInfo);
 	});
 }
 
@@ -121,7 +120,7 @@ function saveEntry(event) {
 function processInfo(result) {
     var UserID = parseInt(result["UserID"]);
     var User = result["AllProfiles"][UserID];
-    $("#name-text").text("Emotion Entry For: " + User["Name"]);
+    $("#name-text").text(User["Name"]);
     
     console.log("Hello");
     var EmotionHTML = "";  // Holds all of the HTML code for the emotionlist.
