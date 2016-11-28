@@ -40,9 +40,14 @@ if ("development" == app.get("env")) {
 
 app.post('/getQuestion', function(req, res){
 var qArr = ["Which parent do you identify with most? ", "What is your biggest pet peeve? ",
-"If you could fix one world problem, what would it be?", "If you only had three wishes, what would they be? ", 
-"What is your favorite thing about yourself?", "What is something you regret doing? ", "If you could have any job in the world, what would it be?",
-"When was the last time you cried? "];
+"Can you tell if someone is lying?", 
+"Do you have any irrational fears? ", "What is your favorite thing about yourself?", 
+"What is something you regret doing? ", 
+"What was the best kiss of your entire life?",
+"What is one of your guilty pleasures?",
+"When was the last time you cried? ",
+"What are you most grateful for?"];
+var qArrLen = qArr.length; 
 var ranNum = Math.floor(Math.random()* (qArrLen - 1)) + 0;  
 res.send(qArr[ranNum]); 
 });
