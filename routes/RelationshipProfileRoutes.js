@@ -3,12 +3,25 @@
 var ProfileInfo = require('../RelationshipProfile.json');
 var FileIO = require('fs');
 
+exports.view = function (req, res) {
+    var Info= {
+        "HomeButton": "../images/HomeSymbol.png",
+        "HomeLink": "/Home"
+        // "get question": "/getQuestion"
+    };
+    res.render("RelationshipProfile");
+};
+
 exports.getProfileInfo = function (req, res) {
     res.json(ProfileInfo);
 }
 
 exports.personal = function (req, res) {
-    res.render("RelationshipProfile");
+    var Info= {
+        "HomeButton": "../images/HomeSymbol.png",
+        "HomeLink": "/Home"
+    };
+    res.render("RelationshipProfile", Info);
 }
 
 exports.saveInfo = function (req, res) {
@@ -31,3 +44,4 @@ exports.saveInfo = function (req, res) {
 
     fs.writeFile("./RelationshipProfile.json", JSON.stringify(Profile), 'utf8');
 }
+
