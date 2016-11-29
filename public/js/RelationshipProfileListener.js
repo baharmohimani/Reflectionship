@@ -154,7 +154,7 @@ function endSwitch(result) {
         BodyHTML = BodyHTML + "<tr class='edit-text'>" +
             "<td class='subcategory'>" + item.Subcategory + "</td>" +
              "<td class='subcategory'>" + item.SubcategoryInfo + "</td>" +
-             "<td class='delete-active'><a></a></td>";
+             "<td class='delete-active'></td></tr>";
     }
 
     $("#profile-body").html(BodyHTML);

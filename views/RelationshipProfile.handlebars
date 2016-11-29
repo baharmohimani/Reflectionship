@@ -46,7 +46,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 main">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  main">
                 <h3 id="profile-title" class="page-header name-text"></h3>
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -57,13 +57,6 @@
                             </tr>
                         </thead>
                         <tbody id="profile-body">
-                            {{#each Detail.TableBodyRows}}
-                            <tr class="edit-text">
-                                <td class="subcategory">{{Subcategory}}</td>
-                                <td class="subcategory-data">{{SubcategoryInfo}}</td>
-                                <td class="delete-active"><a></a></td>
-                            </tr>
-                            {{/each}}
                         </tbody>
                     </table>
                 </div>

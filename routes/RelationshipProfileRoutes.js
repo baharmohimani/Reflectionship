@@ -16,8 +16,8 @@ exports.personal = function (req, res) {
 }
 
 exports.saveInfo = function (req, res) {
-    var ProfileID = parseInt(Profile["UserID"]);
-    var ProfileUser = Profile["AllProfiles"][ProfileID];
+    var ProfileID = parseInt(ProfileInfo["UserID"]);
+    var ProfileUser = ProfileInfo["AllProfiles"][ProfileID];
 
     switch (req.body.detail) {
         case '0':
@@ -33,5 +33,5 @@ exports.saveInfo = function (req, res) {
             break;
     }
 
-    fs.writeFile("./ProfileInfo.json", JSON.stringify(Profile), 'utf8');
+    FileIO.writeFile("./ProfileInfo.json", JSON.stringify(ProfileInfo), 'utf8');
 }

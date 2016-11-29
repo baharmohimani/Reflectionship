@@ -4,23 +4,6 @@
     width: 100%;
 }
 
-.background {
-    position: relative;
-}
-
-.background:after {
-     content:"";
-     background: url("../images/BackgroundImage.png") no-repeat;
-     background-size: cover;
-     opacity: 0.85;
-     position: absolute;
-     z-index: -1;
-     top: 0;
-     bottom: 0;
-     left: 0;
-     right: 0;
-}
-
 .navbar-custom {
     background-color: #4fb8ea;
     border-radius: 0;
@@ -80,6 +63,7 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
     padding-top: 50px;
+    background-color: #c6e1ff;
 }
 
 

@@ -65,8 +65,11 @@ app.get("/EmotionTracker", emotion.view);
 app.post("/EmotionTracker/Save", emotion.saveInfo);
 
 app.get("/ConversationIdeas", conversation.view);
-app.get("/SwitchProfile", switchusers.view);
 
+app.get("/SwitchProfile", switchusers.view);
+app.get("/SwitchProfile/Info", switchusers.getInfo);
+app.post("/SwitchProfile/DeleteUser", switchusers.deleteInfo);
+app.post("/SwitchProfile/AddUser", switchusers.addInfo);
 
 http.createServer(app).listen(app.get("port"), function () {
     console.log("Express server listening on port " + app.get("port"));
