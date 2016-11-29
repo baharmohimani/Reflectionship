@@ -28,6 +28,6 @@ exports.deleteInfo = function (req, res) {
 
 exports.addInfo = function (req, res) {
     ProfileInfo["AllProfiles"].push(req.body);
-    console.log(req.body);
+    ProfileInfo["UserID"] = 0;
     FileIO.writeFile("./ProfileInfo.json", JSON.stringify(ProfileInfo), 'utf8');
 }
