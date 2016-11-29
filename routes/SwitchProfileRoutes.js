@@ -14,10 +14,20 @@ exports.getInfo = function (req, res) {
     res.json(ProfileInfo);
 }
 
-exports.deleteInfo = function (req, res) {
+exports.changeUser = function (req, res) {
+    ProfileInfo["UserID"] = parseInt(req.body.ID);
 
+    FileIO.writeFile("./ProfileInfo.json", JSON.stringify(ProfileInfo), 'utf8');
+}
+
+exports.deleteInfo = function (req, res) {
+    ProfileInfo["AllProfiles"].splice(parseInt(req.body.ID), 1);
+
+    FileIO.writeFile("./ProfileInfo.json", JSON.stringify(ProfileInfo), 'utf8');
 }
 
 exports.addInfo = function (req, res) {
-
+    ProfileInfo["AllProfiles"].push(req.body);
+    console.log(req.body);
+    FileIO.writeFile("./ProfileInfo.json", JSON.stringify(ProfileInfo), 'utf8');
 }

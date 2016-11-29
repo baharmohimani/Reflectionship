@@ -68,6 +68,7 @@ app.get("/ConversationIdeas", conversation.view);
 
 app.get("/SwitchProfile", switchusers.view);
 app.get("/SwitchProfile/Info", switchusers.getInfo);
+app.post("/SwitchProfile/ChangeUser", switchusers.changeUser);
 app.post("/SwitchProfile/DeleteUser", switchusers.deleteInfo);
 app.post("/SwitchProfile/AddUser", switchusers.addInfo);
 
