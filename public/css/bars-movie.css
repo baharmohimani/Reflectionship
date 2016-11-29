@@ -6,12 +6,13 @@
 
     .br-theme-bars-movie .br-widget a {
         display: block;
-        width: 90px;
-        height: 25px;
+        width: 80px;
+        height: 35px;
         float: left;
         background-color: #d9edf7;
         margin: 3px;
-		
+		margin-bottom: 25px;
+        margin-top: 25px;
     }
 
         .br-theme-bars-movie .br-widget a.br-active,
@@ -24,7 +25,7 @@
         width: 150px;
         text-align: center;
         font-weight: 600;
-		margin-left: 120px;
+		margin-left: 95px;
         color: #31708f;
 		background-color: #d9edf7;
         font-weight: 400;

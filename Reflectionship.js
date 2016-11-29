@@ -9,8 +9,7 @@ var handlebars = require("express3-handlebars")
 
 // Load all controllers in these js files. 
 var home = require("./routes/HomeRoutes");
-var emotionredone2 = require("./routes/EmotionTrackerRedoneRoutes2");
-var emotionredone = require("./routes/EmotionTrackerRedoneRoutes");
+var emotion = require("./routes/EmotionTrackerRoutes");
 var conversation = require("./routes/ConversationIdeasRoutes");
 var relprofile = require("./routes/RelationshipProfileRoutes");
 var switchusers = require("./routes/SwitchProfileRoutes");
@@ -35,25 +34,24 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // development only
 if ("development" == app.get("env")) {
-  app.use(express.errorHandler());
+    app.use(express.errorHandler());
 }
 
-app.post('/getQuestion', function(req, res){
-var qArr = ["Which parent do you identify with most? ", "What is your biggest pet peeve? ",
-"Can you tell if someone is lying?", 
-"Do you have any irrational fears? ", "What is your favorite thing about yourself?", 
-"What is something you regret doing? ", 
-"What was the best kiss of your entire life?",
-"What is one of your guilty pleasures?",
-"When was the last time you cried? ",
-"What are you most grateful for?"];
-var qArrLen = qArr.length; 
-var ranNum = Math.floor(Math.random()* (qArrLen - 1)) + 0;  
-res.send(qArr[ranNum]); 
+app.post('/getQuestion', function (req, res) {
+    var qArr = ["Which parent do you identify with most? ", "What is your biggest pet peeve? ",
+    "Can you tell if someone is lying?",
+    "Do you have any irrational fears? ", "What is your favorite thing about yourself?",
+    "What is something you regret doing? ",
+    "What was the best kiss of your entire life?",
+    "What is one of your guilty pleasures?",
+    "When was the last time you cried? ",
+    "What are you most grateful for?"];
+    var qArrLen = qArr.length;
+    var ranNum = Math.floor(Math.random() * (qArrLen - 1)) + 0;
+    res.send(qArr[ranNum]);
 });
 
-  
-      
+
 // Add routes here
 app.get("/", login.view);
 app.get("/Home", home.view)
@@ -62,16 +60,9 @@ app.get("/RelationshipProfile/Info", relprofile.getProfileInfo);
 app.get("/RelationshipProfile", relprofile.personal);
 app.post("/RelationshipProfile/Save", relprofile.saveInfo);
 
-
-
-app.get("/EmotionTrackerRedone/Info", emotionredone.getInfo);
-app.get("/EmotionTrackerRedone", emotionredone.view);
-app.post("/EmotionTracker/Save", emotionredone.saveInfo);
-
-app.get("/EmotionTrackerRedone2/Info", emotionredone2.getInfo);
-app.get("/EmotionTrackerRedone2", emotionredone2.view);
-app.post("/EmotionTracker2/Save", emotionredone2.saveInfo);
-
+app.get("/EmotionTracker/Info", emotion.getInfo);
+app.get("/EmotionTracker", emotion.view);
+app.post("/EmotionTracker/Save", emotion.saveInfo);
 
 app.get("/ConversationIdeas", conversation.view);
 app.get("/SwitchProfile", switchusers.view);

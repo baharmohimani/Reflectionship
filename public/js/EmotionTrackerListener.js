@@ -1,11 +1,9 @@
 // Call this function when the page loads (the "ready" event)
-$(document).ready(function() {
+$(document).ready(function () {
     initializePage();
-    
-    $("#emotion-list").hide();
-    $("#delete-btn").hide();
-    $("#emotion-list-blocker").hide();
-    $.get("/EmotionTrackerRedone/Info", processInfo)
+
+    $("#entries").hide();
+    $.get("/EmotionTracker/Info", processInfo)
 })
 
 /*
@@ -13,43 +11,58 @@ $(document).ready(function() {
  */
 function initializePage() {
     // Setup listeners.
-    $("#record").click(saveEntry);
-    $("#reset").click(removeEntry);
+    $("#add-entry-btn").click(saveEntry);
+    $("#remove-entry-btn").click(removeEntry);
     $("#to-record").click(toRecord);
     $("#to-log").click(toLog);
     $("#question").click(showHelp);
+    $("#add-details-btn").click(addDetails);
+    $("#back-btn").click(goBack);
+}
+
+function goBack() {
+    $("#emotion-bar").removeClass("details");
+}
+
+function addDetails() {
+    $("#emotion-bar").addClass("details");
 }
 
 function showHelp() {
     window.alert("This is a log to track your emotions throughout your relationship with the currently selected person.");
-    console.log("HOY");
 }
 
 function toRecord() {
+    $("#entries").hide();
     $("#emotion-bar").fadeIn();
-    $("#emotion-list").fadeOut();
-    $("#emotion-list-blocker").fadeOut();
-    $("#delete-btn").fadeOut();
-    $("#add-btn").fadeIn();
 }
 
 function toLog() {
-    $("#emotion-bar").fadeOut();
-    $("#emotion-list").fadeIn();
-    $("#emotion-list-blocker").fadeIn();
-    $("#delete-btn").fadeIn();
-    $("#add-btn").fadeOut();
-        
+    $("#emotion-bar").hide();
+    $("#entries").fadeIn();
+
     var objDiv = document.getElementById("emotion-list");
-    objDiv.scrollTop = objDiv.scrollHeight;
+    objDiv.scrollTop = objDiv.scrollHeight + 3000;
 }
 
 function removeEntry(event) {
-    $("#emotion-list a").last().remove();
-
     var SaveDataJSON = { jsonStr: "" };
-    $.post("/EmotionTracker/Save", SaveDataJSON, function(data) {
-        $.get("/EmotionTrackerRedone/Info", processInfo);
+    $.ajax({
+        type: "POST",
+        url: "/EmotionTracker/Save",
+        data: SaveDataJSON
+    });
+    $.get("/EmotionTracker/Info", processInfo);
+
+    // Display alert.
+    $("#alert-element").addClass("alert-info");
+    $("#alert-element").html("<strong>Success!</strong> You have removed the most recent entry.");
+
+    $("#notification-screen").addClass("active");
+    $("#alert-element").fadeTo(2000, 0).slideUp(100, function () {
+        $("#notification-screen").removeClass("active");
+        $("#alert-element").removeClass("alert-info");
+        $("#alert-element").fadeTo(0, 1.0);
     });
 }
 
@@ -59,7 +72,7 @@ function saveEntry(event) {
     var emotion = opsel.text();
     var date = new Date();
     var month = ""
-    switch(date.getMonth()){
+    switch (date.getMonth()) {
         case 0:
             month = "January";
             break;
@@ -97,52 +110,55 @@ function saveEntry(event) {
             month = "December";
             break;
     }
-    
-    
+
+
     var currDate = (month) + " " + (date.getDate());
-    
+
     var details = $("#comment").val();
-    
+
     // Finally, save data to JSON file.
-    var SaveData = 
+    var SaveData =
     {
         Emotion: emotion,
         Date: currDate,
         Details: details
     };
-    
+
     var SaveDataJSON = { jsonStr: (JSON.stringify(SaveData)) };
-    
-    $.post("/EmotionTracker/Save", SaveDataJSON);
-   $.get("/EmotionTrackerRedone2/Info", processInfo);
- }
- /*
- - * GET home page.
- - */
- function keysrt(key, desc) {
-     return function (a, b) {
-         return desc ? ~~(a[key] < b[key]) : ~~(a[key] > b[key]);
-   }
-    // $.post("/EmotionTracker/Save", SaveDataJSON, function(data) {
-        // $.get("/EmotionTrackerRedone/Info", processInfo);
-    // });
+
+    $.ajax({
+        type: "POST",
+        url: "/EmotionTracker/Save",
+        data: SaveDataJSON
+    });
+
+    $.get("/EmotionTracker/Info", processInfo);
+
+    // Display alert.
+    $("#alert-element").addClass("alert-success");
+    $("#alert-element").html("<strong>Success!</strong> You have added a new entry.");
+
+    $("#notification-screen").addClass("active");
+    $("#alert-element").fadeTo(2000, 0).slideUp(100, function () {
+        $("#notification-screen").removeClass("active");
+        $("#alert-element").removeClass("alert-success");
+        $("#alert-element").fadeTo(0, 1.0);
+    });
+
+    $("#emotion-bar").removeClass("details");
 }
 
 function processInfo(result) {
     var UserID = parseInt(result["UserID"]);
     var User = result["AllProfiles"][UserID];
-    $("#name-text").text("Emotion Entry For: " + User["Name"]);
-    
-    console.log("Hello");
-    var EmotionHTML = "";  // Holds all of the HTML code for the emotionlist.
+    $("#name-text").text("How do you feel about " + User["Name"] + " today?");
 
-    //console.log(User["Entries"]);
-     User["Entries"].sort(keysrt('properDate', false));
-    //console.log(User["Entries"]);
+    var EmotionHTML = "";  // Holds all of the HTML code for the emotion list.
+
     for (var i = 0; i < User["Entries"].length; i++) {
         var entry = User["Entries"][i];
         var color = null;
-        switch(entry["Emotion"]) {
+        switch (entry["Emotion"]) {
             case "Happy":
                 color = "alert-success";
                 break;
@@ -163,6 +179,6 @@ function processInfo(result) {
         EmotionHTML = EmotionHTML + "<h4 class='list-group-item-heading'>" + entry["Date"] + "</h4>";
         EmotionHTML = EmotionHTML + "<p class='list-group-item-text'>" + entry["Details"] + "</p></a>";
     }
-    
+
     $("#emotion-list").html(EmotionHTML);
 }

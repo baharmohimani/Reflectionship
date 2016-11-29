@@ -10,7 +10,7 @@ exports.view = function (req, res) {
                         "ImageHolder": "images/ImageHolder.png",
                         "Image": "images/Emotion.png",
                         "ImageText": "images/EmotionTrackerText.png",
-                        "AspectLink": "/EmotionTrackerRedone",
+                        "AspectLink": "/EmotionTracker",
                         "ImageClass": "top-image",
                         "HolderClass": "top-holder"
                     },

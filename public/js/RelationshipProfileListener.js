@@ -120,7 +120,6 @@ function saveInfo(event) {
 }
 
 function deleteInfo(event) {
-    console.log();
     var deleteRow = $(this).closest("tr");
     deleteRow.remove();
 }

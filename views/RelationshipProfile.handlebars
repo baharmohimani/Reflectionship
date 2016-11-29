@@ -14,13 +14,14 @@
 </head>
 
 <body class="background">
-
-    <!-- Top bar displaying the profile's picture and name, and the return home button. -->
-    <nav class="home-bar navbar navbar-custom navbar-fixed-top">
-        <a href="{{HomeLink}}">
-            <img class="home navbar-right" src="{{HomeButton}}" />
-        </a>
+    <nav class="navbar navbar-custom navbar-fixed-top">
+        <nav class="home-bar navbar navbar-custom navbar-fixed-top">
+            <a href="{{HomeLink}}">
+                <img class="home navbar-right" src="{{HomeButton}}" />
+            </a>
+        </nav>
     </nav>
+
     <!-- Profile sidebar. -->
     <nav id="sidebar-container">
         <ul class="sidebar-nav">
@@ -75,20 +76,10 @@
             <a id="save-button">Save Information</a>
         </div>
     </div>
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-87455402-2', 'auto');
-  ga('send', 'pageview');
-  ga('send','event','HomeButton','click');
-  // jQuery and Javascript script files below.
-  </script>
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/RelationshipProfileListener.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/RelationshipProfileListener.js"></script>
 </body>
 
 </html>
