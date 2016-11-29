@@ -27,7 +27,7 @@
 
     .background:after {
         content: "";
-        background: url("../images/BackgroundImage.png") no-repeat;
+        /*background: url("../images/BackgroundImage.png") no-repeat;*/
         background-size: cover;
         opacity: 0.85;
         position: absolute;
@@ -166,6 +166,9 @@ body {
         background-color: #428bca;
     }
 
+    body {
+    background-color: #c6e1ff;
+}
 
 /*
  * Main content
